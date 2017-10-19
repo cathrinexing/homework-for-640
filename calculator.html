@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CALCULATOR</title>
+
+    <style >
+        body{
+	text-align:center;margin:auto;width:600px; border:solid 1px #000;background-color: beige;
+}
+        
+
+h2 {  
+    font-size: 20px; color: purple;
+}
+
+legend {  
+    font-size: 18px;
+}
+        
+       div { 
+    font-size: 24px;color: hotpink; font-style: oblique;
+}
+       
+    </style>
+
+</head>
+
+
+<body>
+    /* code plan
+    This program is calculators that help people calcite the area of their rooms. When you put the length and width of the room and press the calculate button, it returns the area of your room.
+
+Inputs 
+The length and width of the room
+Output
+Message telling user the results
+
+First, I use a form text input for length and width. Then I need a button to click to submit my inputs. When the user clicks the button, I'll activate my calculation function. 
+In my function, I need to get the value of the form input. I'll grab the number  to multiply them. This will give me a value. Then I'll return a message telling them the value of room area.
+    */
+
+    <h1 id="myCss">Room Area Calculator</h1>
+
+    <h2><i>Enter the length and width of the room in order to get the room area.</i></h2>
+
+    <img src="imgs/room.jpg" alt="room picture" width="400">
+   
+    <br>
+    <br>
+    <br>
+<legend style="color:mediumpurple">Enter the room's details:</legend>
+    <br>
+    <form>
+        <label for="licks1" >Enter the length of the room(meter): </label>
+        <input type="text" name="licks1" id="licks1">
+
+ <br>
+    <br>
+   <label for="licks2" >Enter the width of the room(meter): </label>
+        <input type="text" name="licks2" id="licks2">
+
+         <br>
+    <br>
+        <button type="button" id="lButton" >Calculate</button>
+
+        <br>
+        <br>
+        <legend style="color:mediumpurple" >Results:</legend>
+    
+        <div id="output" ></div>
+
+    </form>
+
+    <script>
+    
+         var cssChange = document.getElementById("myCss");
+        cssChange.style.color = "pink";
+        cssChange.style.fontSize = "40px";
+        cssChange.style.textAlign = "center";
+        cssChange.style.textDecoration ="underline";
+        function roomarea() {
+            var length = document.getElementById("licks1").value;
+            console.log("length: " + length);
+            var width = document.getElementById("licks2").value;
+              console.log("width: " + width);
+            roomarea = length*width;
+            roomarea = Math.round(roomarea);
+            
+            
+            var message = "The room area is: " + roomarea + " square meter";
+            console.log(message);
+            var outputText = document.getElementById("output");
+            console.log(outputText);
+            outputText.innerHTML = message;
+        }
+        
+        
+        
+        var getButton = document.getElementById("lButton");
+        getButton.addEventListener("click", roomarea);
+        
+        
+ 
+    </script>
+
+</body>
+
+</html>
