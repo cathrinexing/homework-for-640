@@ -20,7 +20,7 @@ var currentBgImage;
  
 
 function preload() {
-    bgImage = loadImage("assets/river.jpg");
+    bgImage = loadImage("assets/park.jpg");
   
     bgImage2= loadImage("assets/forest.jpg");
 
@@ -42,7 +42,7 @@ function setup() {
     bgChange.position(400, 500);
     bgChange.mousePressed(changeBgFunction);
 
-    bgChange2 = createButton("river");
+    bgChange2 = createButton("park");
     bgChange2.position(600, 500);
     bgChange2.mousePressed(changeBgFunction2);
  currentBgImage = bgImage;
