@@ -39,11 +39,11 @@ function setup() {
         bgColor = color(163, 168, 167);
 
     bgChange = createButton("forest");
-    bgChange.position(50, 520);
+    bgChange.position(400, 500);
     bgChange.mousePressed(changeBgFunction);
 
     bgChange2 = createButton("river");
-    bgChange2.position(50, 500);
+    bgChange2.position(600, 500);
     bgChange2.mousePressed(changeBgFunction2);
  currentBgImage = bgImage;
 }
@@ -53,7 +53,7 @@ function draw() {
     rectMode(CENTER);
     imageMode(CENTER);
     
-       image(currentBgImage, 500, 500, 800, 800);
+       image(currentBgImage, 500, 500, 1000, 1000);
     posX = mouseX;
     posY = mouseY;
   
@@ -130,21 +130,21 @@ ellipse(-200, 20, 200, 70);
        pop();
        */
        
-   /* translate(width/2, height/2);
+ /*translate(width/2, height/2);
   rotate(PI/3.0);
    
     noStroke();
      fill("beige");
-ellipse(-200, 20, 200, 70);
+ellipse(posX-200, posY+20, 200, 70);
       fill("pink");
-    ellipse(-200, 20, 100, 35);
+    ellipse(posX-200, posY+20, 100, 35);
     rotate(PI/3.0);
      fill("beige");
     ellipse(-200, -20, 200, 70);
       fill("pink");
       ellipse(-200, -20, 100, 35);
-     */ 
-      
+  
+      */
       
       
      /*var hitZoneDist = dist(hitZoneX,hitZoneY,mouseX,mouseY);
