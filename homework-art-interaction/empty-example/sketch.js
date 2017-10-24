@@ -3,7 +3,7 @@ var posY = 0;
 var bgColor;
 
 var pics = [];
-var targetPosX = [200, 500, 800];
+var targetPosX = [100, 300, 500];
 
 var targetPosY = 120;
 //var carrot;
@@ -27,7 +27,7 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(1000, 1000); 
+    createCanvas(600, 600); 
      pics[0]=loadImage("assets/carrot.png");
     pics[1] = loadImage("assets/xi.png");
     pics[2]=loadImage("assets/la.png");
@@ -39,11 +39,11 @@ function setup() {
         bgColor = color(163, 168, 167);
 
     bgChange = createButton("forest");
-    bgChange.position(400, 500);
+    bgChange.position(200, 500);
     bgChange.mousePressed(changeBgFunction);
 
     bgChange2 = createButton("park");
-    bgChange2.position(600, 500);
+    bgChange2.position(400, 500);
     bgChange2.mousePressed(changeBgFunction2);
  currentBgImage = bgImage;
 }
@@ -53,7 +53,7 @@ function draw() {
     rectMode(CENTER);
     imageMode(CENTER);
     
-       image(currentBgImage, 500, 500, 1000, 1000);
+       image(currentBgImage, 300, 300, 600, 600);
     posX = mouseX;
     posY = mouseY;
   
