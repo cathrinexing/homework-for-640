@@ -113,10 +113,12 @@ function draw() {
    
     
    //ears 
-   /* push();
-    translate(width/2, height/2);
-    //rotate(PI/3.0);
-    rotate(counter++);
+ 
+    push();
+    translate(posX, posY);
+    rotate(PI/3.0);
+   
+   // rotate(counter++);
     noStroke();
      fill("beige");
 ellipse(-200, 20, 200, 70);
@@ -128,11 +130,11 @@ ellipse(-200, 20, 200, 70);
       fill("pink");
       ellipse(-200, -20, 100, 35);
        pop();
-       */
+    
+    
        
  /*translate(width/2, height/2);
   rotate(PI/3.0);
-   
     noStroke();
      fill("beige");
 ellipse(posX-200, posY+20, 200, 70);
