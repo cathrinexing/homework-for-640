@@ -1,0 +1,1 @@
+Include 3 possible ideas, include a paragraph summary and any visuals useful to explain your concept
