@@ -3,14 +3,14 @@ Include 3 possible ideas, include a paragraph summary and any visuals useful to 
 # CIM640-Final
 
 ## idea 1
-### about buble fish
+#### about buble fish
 
 ## idea 2
-### about rabbit
+#### about rabbit
 
 
 ## idea 3
-### about music
+#### about music
 
 [click here for google](http://www.google.com)
 
