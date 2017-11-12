@@ -1,1 +1,4 @@
-# homework-for-640
+# project 1 
+
+#### A calculator about calculating the area of home.
+
