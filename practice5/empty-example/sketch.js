@@ -57,11 +57,9 @@ function interface(tempX, tempY, tempBoxSize, tempColor){
     ellipse(this.x, this.y, this.boxSize, this.boxSize);
 
     if(this.overlay == true){
-      fill(127, 200);
+      fill(0, 100);
       ellipse(this.x, this.y, this.boxSize, this.boxSize);
     }
-
-
 
   }
 
