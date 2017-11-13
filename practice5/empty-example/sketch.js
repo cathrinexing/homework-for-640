@@ -1,196 +1,78 @@
-var posX = 0;
-var posY = 0;
-var bgColor;
+var interfaceItems = [];
 
-var pics = [];
-var targetPosX = [100, 300, 500];
+var brushSize = 10;
 
-var targetPosY = 120;
-//var carrot;
-//var xi;
-//var la;
-//var hitZoneX = 100;
-//var hitZoneY = 100;
+function setup(){
+  createCanvas(1000,600);
 
-  var bgImage, bgImage2;
+  interfaceItems.push(new interface(50, 100, 30, color(255, 51, 153)));
+  interfaceItems.push(new interface(100, 100, 30, color(102, 153, 255)));
+  interfaceItems.push(new interface(50, 150, 30, color(255, 204, 255)));
+  interfaceItems.push(new interface(100, 150, 30, color(153, 204, 255)));
+  }
 
-var bgChange, bgChange2;
+  function draw() {
 
-var currentBgImage;
- 
+      fill(0);
+      ellipse(mouseX, mouseY, brushSize, brushSize);
 
-function preload() {
-    bgImage = loadImage("assets/park.jpg");
-  
-    bgImage2= loadImage("assets/forest.jpg");
-
-}
-
-function setup() {
-    createCanvas(600, 600); 
-     pics[0]=loadImage("assets/carrot.png");
-    pics[1] = loadImage("assets/xi.png");
-    pics[2]=loadImage("assets/la.png");
-
-  
-   posX = width/2;
-   posY = height/2;
-       
-        bgColor = color(163, 168, 167);
-
-    bgChange = createButton("forest");
-    bgChange.position(200, 500);
-    bgChange.mousePressed(changeBgFunction);
-
-    bgChange2 = createButton("park");
-    bgChange2.position(400, 500);
-    bgChange2.mousePressed(changeBgFunction2);
- currentBgImage = bgImage;
-}
-
-function draw() {
-      background(bgColor);
-    rectMode(CENTER);
-    imageMode(CENTER);
-    
-       image(currentBgImage, 300, 300, 600, 600);
-    posX = mouseX;
-    posY = mouseY;
-  
-    frameRate(5);
-    stroke(0);
-    strokeWeight(1);
-    
-     noStroke();
-    
-    //face
-  
-    fill("beige");
-    ellipse(posX, posY, 250, 300);
-    
-    
-  
-   //eyes
-      var wiggleX = map(mouseX, 0, width, -40, 40);
-    
-    fill(255);
-    ellipse(posX-60,posY-30, 80,90);
-    ellipse(posX+60,posY-30, 80, 90);
-    fill(0);
-    ellipse(posX-60+ wiggleX,posY-40, 30, 40);
-    ellipse(posX+60+ wiggleX,posY-40, 30, 40); 
-
- 
-    //nose
-    
-    fill("yellow");
-    triangle(posX,posY + 10,posX-20,posY + 65,posX+20,posY +65);
- 
-    
-     //hair
-    stroke(0);
-    noFill();
-    arc(posX,posY,175,300, PI+QUARTER_PI, TWO_PI-QUARTER_PI);
-    arc(posX,posY,200,300, PI, TWO_PI);
-    arc(posX,posY,225,300, PI, TWO_PI);
-    arc(posX,posY,250,300, PI, TWO_PI);
-    arc(posX,posY,275,300, PI, TWO_PI);
-    
-         //mouse  
-      arc(posX-10,posY+100,25,25, 0, PI);
-     arc(posX+10,posY+100,25,25, 0, PI); 
-    fill("pink");
-    noStroke();
- ellipse(posX,posY+100, 30, 20);
-     stroke("#937E57");
-     strokeWeight(8);
-    point(posX,posY + 100);
-    
-   //mole 
-    stroke("#937E57");
-    strokeWeight(5);
-    point(posX + 80,posY + 10);
-   
-    
-   //ears 
- 
-    push();
-    translate(posX, posY);
-    rotate(PI/3.0);
-   
-   // rotate(counter++);
-    noStroke();
-     fill("beige");
-ellipse(-200, 20, 200, 70);
-      fill("pink");
-    ellipse(-200, 20, 100, 35);
-    rotate(PI/3.0);
-     fill("beige");
-    ellipse(-200, -20, 200, 70);
-      fill("pink");
-      ellipse(-200, -20, 100, 35);
-       pop();
-    
-    
-       
- /*translate(width/2, height/2);
-  rotate(PI/3.0);
-    noStroke();
-     fill("beige");
-ellipse(posX-200, posY+20, 200, 70);
-      fill("pink");
-    ellipse(posX-200, posY+20, 100, 35);
-    rotate(PI/3.0);
-     fill("beige");
-    ellipse(-200, -20, 200, 70);
-      fill("pink");
-      ellipse(-200, -20, 100, 35);
-  
-      */
-      
-      
-     /*var hitZoneDist = dist(hitZoneX,hitZoneY,mouseX,mouseY);
-    console.log("hitZoneDist: " + hitZoneDist);
-
-    if(hitZoneDist <= 5){
-       console.log("We are totally in the zone!");
-        image(carrot,0,0,200,200);
-       }
-
-    strokeWeight(1);
-    ellipse(hitZoneX,hitZoneY, 10,10); */
-    
-  if (mouseX > targetPosX[0] - 100 && mouseX < targetPosX[0] + 100 && mouseY > targetPosY - 100 && mouseY < targetPosY + 100) {
-        image(pics[0], targetPosX[0], targetPosY);
-
-    } 
-
-    if (mouseX > targetPosX[1] - 100 && mouseX < targetPosX[1] + 100 && mouseY > targetPosY - 100 && mouseY < targetPosY + 100) {
-        image(pics[1], targetPosX[1], targetPosY);
-
-    } 
-
-    if (mouseX > targetPosX[2] - 100 && mouseX < targetPosX[2] + 100 && mouseY > targetPosY - 100 && mouseY < targetPosY + 100) {
-        image(pics[2], targetPosX[2], targetPosY);
-
-    } 
+      interfaceItems[0].display();
+      interfaceItems[1].display();
+      interfaceItems[2].display();
+      interfaceItems[3].display();
+      interfaceItems[0].check();
+      interfaceItems[1].check();
+      interfaceItems[2].check();
+      interfaceItems[3].check();
 
 }
 
+function mousePressed(){
+
+  if(interfaceItems[0].check() == true){
+    brushSize++;
+  }
+
+  if (interfaceItems[1].check() == true) {
+      brushSize--;
+  }
+  if (interfaceItems[2].check() == true) {
+      brushSize=brushSize + 5;
+  }
+  if (interfaceItems[3].check() == true) {
+     brushSize= brushSize - 5;
+  }
+  }
+
+function interface(tempX, tempY, tempBoxSize, tempColor){
+  this.x = tempX;
+  this.y = tempY;
+  this.boxSize = tempBoxSize;
+  this.setFill = tempColor;
+  this.overlay = false;
+
+  this.display = function(){
+    
+    fill(this.setFill);
+    ellipse(this.x, this.y, this.boxSize, this.boxSize);
+
+    if(this.overlay == true){
+      fill(127, 200);
+      ellipse(this.x, this.y, this.boxSize, this.boxSize);
+    }
 
 
-function mousePressed() {
-    bgColor = color(249, 245, 126);
-}
 
-function mouseReleased() {
-    bgColor = color(253,221, 247);
-}
-    function changeBgFunction() {
-    currentBgImage = bgImage2;
-    console.log("loading bgimage2");
-}
+  }
 
-function changeBgFunction2() {
-    currentBgImage = bgImage;
+  this.check = function(){
+    if(mouseX > this.x && mouseX < (this.x + this.boxSize) && mouseY > this.y && mouseY < (this.y + this.boxSize) ){
+      this.overlay = true;
+      return true;
+    }else{
+      this.overlay = false;
+
+      return false;
+    }
+  }
 }
