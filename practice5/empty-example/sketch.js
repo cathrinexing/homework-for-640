@@ -52,7 +52,7 @@ function interface(tempX, tempY, tempBoxSize, tempColor){
   this.overlay = false;
 
   this.display = function(){
-    
+    noStroke();
     fill(this.setFill);
     ellipse(this.x, this.y, this.boxSize, this.boxSize);
 
