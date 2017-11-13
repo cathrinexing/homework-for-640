@@ -1,7 +1,8 @@
 var interfaceItems = [];
 
 var brushSize = 10;
-afunction setup() {
+
+function setup() {
     createCanvas(1000, 600);
 
     interfaceItems.push(new interface(50, 100, 30, color(255, 51, 153)));
