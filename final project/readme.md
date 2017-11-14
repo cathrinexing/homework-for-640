@@ -27,10 +27,14 @@ when mouse move to the Ice-Cream Van, generate mouse water around the mouse.
 
 
 ## idea 3
-#### about music
+#### about piano
 A piano play machine
+
 1. you  can press the keyboard on the piano to make sound.
+
 2. you can press the button below to make sound. there are 3 buttons：random 1 key sound; random combination of 2 keys sound;random combination of 3 keys sound.
+
+
 
 [click here for google](http://www.google.com)
 
