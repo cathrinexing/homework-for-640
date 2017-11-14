@@ -38,8 +38,8 @@ A piano play machine
 
 [click here for google](http://www.google.com)
 
-![piano](imgs/piano.jpg)
+![sea](imgs/sea.jpeg) 
 ![forest](imgs/forest.jpg) 
 ![park](imgs/park.jpg)
 ![pepper](imgs/pepper.png)
-![sea](imgs/sea.jpeg) 
+![piano](imgs/piano.jpg)
