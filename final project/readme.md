@@ -40,6 +40,6 @@ A piano play machine
 
 ![sea](imgs/sea.jpeg) 
 ![forest](imgs/forest.jpg) 
-![park](imgs/park.jpg)
 ![pepper](imgs/pepper.png)
+![park](imgs/park.jpg)
 ![piano](imgs/piano.jpg)
