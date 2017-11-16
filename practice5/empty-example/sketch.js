@@ -21,8 +21,8 @@ function setup() {
     text("gray", 190, 180);
     text("rect", 40, 225);
     text("ellipse", 85, 225);
-    interfaceItems.push(new interface(50, 200, 30, color(0, 125, 125)));
-     interfaceItems.push(new interface(100, 200, 30, color(125, 0, 125)));
+    interfaceItems.push(new interface(50, 200, 30, color(127, 255, 170)));
+     interfaceItems.push(new interface(100, 200, 30, color(135, 206, 235)));
     
 }
 
