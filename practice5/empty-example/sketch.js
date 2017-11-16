@@ -2,7 +2,7 @@ var interfaceItems = [];
 
 var brushSize = 10;
 var brushColor = (0, 0, 0);
-
+var brushShape = true;
 
 function setup() {
     createCanvas(1000, 600);
@@ -19,27 +19,37 @@ function setup() {
     text("yellow", 85, 180);
     text("lavender", 130, 180);
     text("gray", 190, 180);
-    interfaceItems.push(new interface(50, 200, 30, color(125, 125, 125)));
+    text("rect", 40, 225);
+    text("ellipse", 85, 225);
+    interfaceItems.push(new interface(50, 200, 30, color(0, 125, 125)));
+     interfaceItems.push(new interface(100, 200, 30, color(125, 0, 125)));
+    
 }
 
 function draw() {
 
     fill(brushColor);
-   ellipse(mouseX, mouseY, brushSize, brushSize);
+      if(brushShape == true){
+    ellipse(mouseX, mouseY, brushSize, brushSize);
+    }else{
+    rect(mouseX, mouseY, brushSize, brushSize)
+    }
     interfaceItems[0].display();
     interfaceItems[1].display();
     interfaceItems[2].display();
     interfaceItems[3].display();
     interfaceItems[4].display();
     interfaceItems[5].display();
-    //interfaceItems[6].display();
+   interfaceItems[6].display();
+    interfaceItems[7].display();
     interfaceItems[0].check();
     interfaceItems[1].check();
     interfaceItems[2].check();
     interfaceItems[3].check();
     interfaceItems[4].check();
     interfaceItems[5].check();
-    //interfaceItems[6].check();
+  interfaceItems[6].check();
+     interfaceItems[7].check();
 }
 
 function mousePressed() {
@@ -64,7 +74,12 @@ function mousePressed() {
     if (interfaceItems[5].check() == true) {
         brushColor = (125, 125, 125);
     }
-  
+  if (interfaceItems[6].check() == true) {
+        brushShape =false;
+    }
+    if (interfaceItems[7].check() == true) {
+        brushShape = true;
+    }
 }
 
 function interface(tempX, tempY, tempBoxSize, tempColor) {
