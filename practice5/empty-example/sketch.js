@@ -1,7 +1,7 @@
 var interfaceItems = [];
 
 var brushSize = 10;
-var brushColor = 125;
+var brushColor = 0;
 
 
 function setup() {
@@ -9,8 +9,9 @@ function setup() {
 
     interfaceItems.push(new interface(50, 100, 30, color(255, 51, 153)));
     interfaceItems.push(new interface(100, 100, 30, color(102, 153, 255)));
-    interfaceItems.push(new interface(50, 150, 30, color(255, 204, 255)));
-    interfaceItems.push(new interface(100, 150, 30, color(153, 204, 255)));
+    interfaceItems.push(new interface(50, 150, 30, color(255, 192, 203)));
+    interfaceItems.push(new interface(100, 150, 30, color(255, 255, 0)));
+    interfaceItems.push(new interface(150, 150, 30, color(125)));
 }
 
 function draw() {
@@ -22,11 +23,12 @@ function draw() {
     interfaceItems[1].display();
     interfaceItems[2].display();
     interfaceItems[3].display();
+     interfaceItems[4].display();
     interfaceItems[0].check();
     interfaceItems[1].check();
     interfaceItems[2].check();
     interfaceItems[3].check();
-
+ interfaceItems[4].check();
 }
 
 function mousePressed() {
@@ -42,7 +44,11 @@ function mousePressed() {
         brushColor = "pink";
     }
     if (interfaceItems[3].check() == true) {
-        brushColor ="black";
+        brushColor="yellow";
+        
+      }   
+      if (interfaceItems[4].check() == true) {
+        brushColor =(125);   
     }
 }
 
