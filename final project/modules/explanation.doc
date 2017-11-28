@@ -1,0 +1,6 @@
+There are two scenarios about our hero-a fish in the sea: find food & find mate, with two buttons below to press.
+
+Find food: when you click the “find food” button, a music plays with moving bubbles in the sea. The Fish is moving with mouse. When you point to the heat zones, the food will appear and the music changes to another one. There are three heat zones in the sea. (mapping eyes of the hero)
+
+
+Find mate：there are several fish with moving bubbles in the sea. Our hero needs to find his mate. The mate is randomly selected. When he points to the right fish. Several things happen:1. generate peach hearts; 2. play a love song; 3. bubbles stop; 4. Other fish’s color change to gray (2 background?); 5. water plants swing(animation). .(mapping eyes of the hero)
