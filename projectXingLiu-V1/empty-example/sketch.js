@@ -23,6 +23,7 @@ var jelly;
 var waterp;
 var waterp1;
 var randomFish = 0;
+var interfaceItems = [];
 
 
 
@@ -45,8 +46,14 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(900, 600);
+    createCanvas(900, 700);
     frameRate(30);
+
+    interfaceItems.push(new interface(550, 650, 30, color(255, 51, 153)));
+    text("setting back", 550, 690);
+    interfaceItems.push(new interface(650, 650, 30, color(102, 153, 255)));
+    text("animation", 650, 690);
+
     bgChange = createButton("setting back");
     bgChange.position(200, 600);
     bgChange.mousePressed(changeBgFunction);
@@ -94,7 +101,7 @@ function setup() {
 
 
 function draw() {
-    background("grey");
+    background("lavender");
 
 
     imageMode(CENTER);
@@ -164,22 +171,22 @@ function draw() {
     //hitzones(target fish)
 
 
-    //  var hitZoneDist0 = dist(p[randomFish][0], p[randomFish][1], mouseX, mouseY);
-    //   console.log("hitZoneDist0: " + hitZoneDist);
-    //   if (hitZoneDist0 <= 30) {
-    //  console.log("We are totally in the zone!");
-    // imageMode(CENTER);
-    //       currentBgImage = bgImage0;
-    //  image(peach, 400, 550, 100, 100);
-    //frameRate(5);
-    //  waterp.play();
-    // jelly.play();
-    //  soundFile1.stop();
-    //    soundFile3.setVolume(1);
-    //      soundFile3.play();
-    //    
-    //       }
-    //        
+//      var hitZoneDist0 = dist(p[randomFish][0], p[randomFish][1], mouseX, mouseY);
+//       console.log("hitZoneDist0: " + hitZoneDist);
+//       if (hitZoneDist0 <= 30) {
+//      console.log("We are totally in the zone!");
+//     imageMode(CENTER);
+//           currentBgImage = bgImage0;
+//      image(peach, 400, 550, 100, 100);
+//    frameRate(5);
+//      waterp.play();
+//     jelly.play();
+//      soundFile1.stop();
+//        soundFile3.setVolume(1);
+//          soundFile3.play();
+//        
+//           }
+            
 
     //bubles show
     for (var g = 0; g < b.length; g++) {
@@ -223,7 +230,6 @@ Bubble.prototype.draw = function () {
 
 };
 
-
 //button function
 function changeBgFunction() {
     currentBgImage = bgImage2;
@@ -248,4 +254,61 @@ function changeBgFunction3() {
 
 function changeBgFunction4() {
     soundFile1.play();
+}
+
+
+//interface button
+interfaceItems[0].check();
+interfaceItems[0].display();
+interfaceItems[1].check();
+interfaceItems[1].display();
+
+
+function mousePressed() {
+if (interfaceItems[1].check() == true) {
+        currentBgImage = bgImage2;
+    console.log("loading bgimage2");
+    soundFile1.stop();
+    frameRate(30);
+    jelly.stop();
+    waterp.stop();
+    waterp1.stop();
+    }
+    
+    if (interfaceItems[1].check() == true) {
+        frameRate(30);
+        jelly.play();
+        waterp.play();
+        waterp1.play();
+    }
+}
+
+function interface(tempX, tempY, tempBoxSize, tempColor) {
+    this.x = tempX;
+    this.y = tempY;
+    this.boxSize = tempBoxSize;
+    this.setFill = tempColor;
+    this.overlay = false;
+
+    this.display = function () {
+        fill(this.setFill);
+        rect(this.x, this.y, this.boxSize, this.boxSize);
+
+        if (this.overlay == true) {
+            fill(0, 100);
+            rect(this.x, this.y, this.boxSize, this.boxSize);
+        }
+
+    }
+
+    this.check = function () {
+        if (mouseX > this.x && mouseX < (this.x + this.boxSize) && mouseY > this.y && mouseY < (this.y + this.boxSize)) {
+            this.overlay = true;
+            return true;
+        } else {
+            this.overlay = false;
+
+            return false;
+        }
+    }
 }
