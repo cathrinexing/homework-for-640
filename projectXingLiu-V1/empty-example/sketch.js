@@ -17,7 +17,7 @@ var hitZoneX2 = 100;
 var hitZoneY2 = 100;
 var hitZoneX3 = 650;
 var hitZoneY3 = 100;
-var soundFile;
+var soundFile1,soundFile2,soundFile3;
 var p = [];
 var jelly;
 var waterp;
@@ -27,15 +27,17 @@ var randomFish = 0;
 
 
 function preload() {
-    bgImage = loadImage("assets/mate.jpg");
+   // bgImage = loadImage("assets/mate.jpg");
     bgImage0 = loadImage("assets/b2.jpg");
     bgImage2 = loadImage("assets/seaw.jpg");
     fishImage = loadImage("assets/fish.png");
-    peach=loadImage("assets/peach.jpg");
+    peach=loadImage("assets/peach.png");
     orangeImage = loadImage("assets/orange.png");
     watermelon = loadImage("assets/watermelon.png");
     banana = loadImage("assets/banana.png");
-    soundFile = loadSound("assets/back.mp3");
+    soundFile1 = loadSound("assets/back.mp3");
+     soundFile2 = loadSound("assets/food.mp3");
+     soundFile3 = loadSound("assets/heart.mp3");
     jelly = loadAnimation("assets/jellyfish0.png", "assets/jellyfish1.png");
     waterp = loadAnimation("assets/waterp0.png", "assets/waterp1.png");
     waterp1 = loadAnimation("assets/waterp2.png", "assets/waterp3.png");
@@ -44,6 +46,7 @@ function preload() {
 
 function setup() {
     createCanvas(900, 600);
+    frameRate(30);
     bgChange = createButton("setting back");
     bgChange.position(200, 600);
     bgChange.mousePressed(changeBgFunction);
@@ -97,9 +100,7 @@ function draw() {
     imageMode(CENTER);
 
     image(currentBgImage, 450, 300, 900, 600);
-    //image(currentBgImage, 400, 300, 800, 600);
-
-
+ 
 
 
 //hero fish
@@ -130,8 +131,8 @@ function draw() {
     if (hitZoneDist1 <= 30) {
         //console.log("We are totally in the zone!");
         image(orangeImage, 600, 550, 80, 80);
-        soundFile.setVolume(1);
-         soundFile.play();
+        soundFile2.setVolume(0.5);
+         soundFile2.play();
 
     }
     
@@ -140,16 +141,18 @@ function draw() {
     if (hitZoneDist2 <= 30) {
         //console.log("We are totally in the zone!");
         image(watermelon, 100, 100, 100, 100);
-        soundFile.setVolume(1);
-        //soundFile.play();
+        soundFile2.setVolume(0.5);
+        // frameRate=frameRate-20;
+      soundFile2.play();
 
     }
     var hitZoneDist3 = dist(hitZoneX3, hitZoneY3, mouseX, mouseY);
     if (hitZoneDist3 <= 30) {
         //console.log("We are totally in the zone!");
         image(banana, 650, 100, 100, 100);
-        soundFile.setVolume(1);
-        // soundFile.play();
+         frameRate(60);
+        soundFile2.setVolume(0.2);
+         soundFile2.play();
 
     }
 
@@ -165,12 +168,14 @@ function draw() {
     //   console.log("hitZoneDist0: " + hitZoneDist);
     //   if (hitZoneDist0 <= 30) {
     //  console.log("We are totally in the zone!");
+       // imageMode(CENTER);
     //       currentBgImage = bgImage0;
-     //  image(peach, 400, 550, 80, 80);
+     //  image(peach, 400, 550, 100, 100);
+    //frameRate(5);
     //  waterp.play();
-    // jelly.stop();
-    //    soundFile.setVolume(1);
-    //      soundFile.play();
+    // jelly.play();
+    //    soundFile3.setVolume(1);
+    //      soundFile3.play();
     //    
     //       }
     //        
@@ -222,20 +227,26 @@ Bubble.prototype.draw = function () {
 function changeBgFunction() {
     currentBgImage = bgImage2;
     console.log("loading bgimage2");
+      soundFile1.stop();
+     frameRate(30);
+    jelly.stop();
+     waterp.stop();
+     waterp1.stop();
 }
 
 function changeBgFunction2() {
+     frameRate(30);
     jelly.play();
      waterp.play();
      waterp1.play();
 }
 
 function changeBgFunction3() {
-     soundFile.stop();
+     soundFile1.stop();
 }
 
 function changeBgFunction4() {
-     soundFile.play();
+     soundFile1.play();
 }
 
 
