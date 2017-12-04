@@ -254,6 +254,7 @@ function changeBgFunction3() {
 
 function changeBgFunction4() {
     soundFile1.play();
+    soundFile1.rate(0.3);
 }
 
 
