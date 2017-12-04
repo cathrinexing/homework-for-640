@@ -1,7 +1,5 @@
 var posX = 0;
 var posY = 0;
-var targetPosX = [100, 300, 500];
-var targetPosY = 120;
 //var f = [];
 var b = [];
 var numberBubbles = 20;
