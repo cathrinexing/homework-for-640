@@ -1,6 +1,5 @@
 var posX = 0;
 var posY = 0;
-//var f = [];
 var b = [];
 var numberBubbles = 20;
 var bgImage0, bgImage, bgImage2;
@@ -24,6 +23,7 @@ var waterp;
 var waterp1;
 var randomFish = 0;
 var interfaceItems = [];
+var setRate = 30;
 
 
 
@@ -47,8 +47,6 @@ function preload() {
 
 function setup() {
     createCanvas(900, 700);
-    frameRate(30);
-
     interfaceItems.push(new interface(550, 650, 30, color(255, 51, 153)));
     text("setting back", 550, 690);
     interfaceItems.push(new interface(650, 650, 30, color(102, 153, 255)));
@@ -85,15 +83,15 @@ function setup() {
     for (var i = 0; i < 3; i++) {
         var pString = "assets/fishp" + i + ".png";
         var curFish = [];
-        curFish[0] = random(600);
-        curFish[1] = random(400);
+        curFish[0] = random(100,800);
+        curFish[1] = random(100,500);
         console.log(curFish[0]);
         curFish[2] = loadImage(pString);
         p.push(curFish);
     }
 
     //select the random fish as a target
-    randomFish = random(p.length);
+    randomFish = int(random(p.length));
     jelly.stop();
     waterp.stop();
     waterp1.stop();
@@ -102,6 +100,7 @@ function setup() {
 
 function draw() {
     background("lavender");
+    frameRate(setRate);
 
 
     imageMode(CENTER);
@@ -138,8 +137,13 @@ function draw() {
     if (hitZoneDist1 <= 30) {
         //console.log("We are totally in the zone!");
         image(orangeImage, 600, 550, 80, 80);
-        soundFile2.setVolume(0.5);
-        soundFile2.play();
+         setRate -5;
+
+        if (!soundFile2.isPlaying()) {
+            soundFile2.setVolume(1);
+            soundFile2.play();
+        }
+
 
     }
 
@@ -148,18 +152,25 @@ function draw() {
     if (hitZoneDist2 <= 30) {
         //console.log("We are totally in the zone!");
         image(watermelon, 100, 100, 100, 100);
-        soundFile2.setVolume(0.5);
-        // frameRate=frameRate-20;
-        soundFile2.play();
+        soundFile2.setVolume(1);
+        setRate +5;
+
+        if (!soundFile2.isPlaying()) {
+            soundFile2.setVolume(1);
+            soundFile2.play();
+        }
 
     }
     var hitZoneDist3 = dist(hitZoneX3, hitZoneY3, mouseX, mouseY);
     if (hitZoneDist3 <= 30) {
         //console.log("We are totally in the zone!");
         image(banana, 650, 100, 100, 100);
-        frameRate(60);
-        soundFile2.setVolume(0.2);
-        soundFile2.play();
+        setRate +5;
+        if (!soundFile2.isPlaying()) {
+            soundFile2.setVolume(1);
+            soundFile2.play();
+        }
+
 
     }
 
@@ -171,22 +182,27 @@ function draw() {
     //hitzones(target fish)
 
 
-//      var hitZoneDist0 = dist(p[randomFish][0], p[randomFish][1], mouseX, mouseY);
-//       console.log("hitZoneDist0: " + hitZoneDist);
-//       if (hitZoneDist0 <= 30) {
-//      console.log("We are totally in the zone!");
-//     imageMode(CENTER);
-//           currentBgImage = bgImage0;
-//      image(peach, 400, 550, 100, 100);
-//    frameRate(5);
-//      waterp.play();
-//     jelly.play();
-//      soundFile1.stop();
-//        soundFile3.setVolume(1);
-//          soundFile3.play();
-//        
-//           }
-            
+    var hitZoneDist0 = dist(p[randomFish][0], p[randomFish][1], mouseX, mouseY);
+    console.log("randomFish: " + randomFish);
+
+    if (hitZoneDist0 <= 30) {
+        //      console.log("We are totally in the zone!");
+        imageMode(CENTER);
+        currentBgImage = bgImage0;
+        image(peach, 600, 350, 200, 200);
+          setRate=60;
+        waterp.play();
+        jelly.play();
+        waterp1.play();
+        soundFile1.stop();
+        if (!soundFile3.isPlaying()) {
+            soundFile3.setVolume(1);
+            soundFile3.play();
+        }
+
+
+    }
+
 
     //bubles show
     for (var g = 0; g < b.length; g++) {
@@ -196,10 +212,18 @@ function draw() {
     }
 
     //fish show
-    imageMode(CORNER);
+//    imageMode(CORNER);
     for (var i = 0; i < 3; i++) {
         image(p[i][2], p[i][0], p[i][1], p[i][2].width / 3, p[i][2].height / 3);
     }
+
+
+    //interface button  
+    interfaceItems[0].check();
+    interfaceItems[0].display();
+    interfaceItems[1].check();
+    interfaceItems[1].display();
+
 
 
 
@@ -235,14 +259,13 @@ function changeBgFunction() {
     currentBgImage = bgImage2;
     console.log("loading bgimage2");
     soundFile1.stop();
-    frameRate(30);
     jelly.stop();
     waterp.stop();
     waterp1.stop();
 }
 
 function changeBgFunction2() {
-    frameRate(30);
+    setRate=20;
     jelly.play();
     waterp.play();
     waterp1.play();
@@ -250,34 +273,31 @@ function changeBgFunction2() {
 
 function changeBgFunction3() {
     soundFile1.stop();
+    soundFile2.stop();
+    soundFile3.stop();
 }
 
 function changeBgFunction4() {
     soundFile1.play();
-    soundFile1.rate(0.3);
+    soundFile1.setVolume(0.3)
+    soundFile1.rate(0.8);
 }
 
 
-//interface button
-interfaceItems[0].check();
-interfaceItems[0].display();
-interfaceItems[1].check();
-interfaceItems[1].display();
-
 
 function mousePressed() {
-if (interfaceItems[1].check() == true) {
-        currentBgImage = bgImage2;
-    console.log("loading bgimage2");
-    soundFile1.stop();
-    frameRate(30);
-    jelly.stop();
-    waterp.stop();
-    waterp1.stop();
-    }
-    
     if (interfaceItems[1].check() == true) {
-        frameRate(30);
+        currentBgImage = bgImage2;
+        console.log("loading bgimage2");
+        soundFile1.stop();
+        setRate=30;
+        jelly.stop();
+        waterp.stop();
+        waterp1.stop();
+    }
+
+    if (interfaceItems[1].check() == true) {
+        setRate=20;
         jelly.play();
         waterp.play();
         waterp1.play();
