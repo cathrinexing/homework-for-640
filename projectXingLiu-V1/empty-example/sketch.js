@@ -10,12 +10,12 @@ var peach;
 var watermelon;
 var banana;
 var hitZoneX1 = 600;
-var hitZoneY1 = 550;
+var hitZoneY1 = 350;
 var hitZoneX2 = 100;
 var hitZoneY2 = 100;
 var hitZoneX3 = 650;
 var hitZoneY3 = 100;
-var soundFile1, soundFile2, soundFile3;
+var soundFile1, soundFile2, soundFile3, soundFile4;
 var p = [];
 var jelly;
 var waterp;
@@ -38,6 +38,7 @@ function preload() {
     soundFile1 = loadSound("assets/back.mp3");
     soundFile2 = loadSound("assets/food.mp3");
     soundFile3 = loadSound("assets/heart.mp3");
+    souldFile4 = loadSound("assets/correct.mp3");
     jelly = loadAnimation("assets/jellyfish0.png", "assets/jellyfish1.png");
     waterp = loadAnimation("assets/waterp0.png", "assets/waterp1.png");
     waterp1 = loadAnimation("assets/waterp2.png", "assets/waterp3.png");
@@ -47,13 +48,13 @@ function preload() {
 function setup() {
     createCanvas(900, 680);
 
-    interfaceItems.push(new interface(110, 610, 80, 25, color(230,230,250)));
+    interfaceItems.push(new interface(110, 610, 80, 25, color(230, 230, 250)));
     text("setting back", 110, 650);
-    interfaceItems.push(new interface(310, 610, 80, 25, color(230,230,250)));
+    interfaceItems.push(new interface(310, 610, 80, 25, color(230, 230, 250)));
     text("animation", 310, 650);
-    interfaceItems.push(new interface(510, 610, 80, 25, color(230,230,250)));
+    interfaceItems.push(new interface(510, 610, 80, 25, color(230, 230, 250)));
     text("animation", 310, 650);
-    interfaceItems.push(new interface(710, 610, 80, 25, color(230,230,250)));
+    interfaceItems.push(new interface(710, 610, 80, 25, color(230, 230, 250)));
     text("animation", 310, 650);
 
     currentBgImage = bgImage2;
@@ -87,7 +88,7 @@ function setup() {
 function draw() {
     background("white");
     frameRate(setRate);
-setRate=20;
+    setRate = 20;
 
     imageMode(CENTER);
 
@@ -122,8 +123,8 @@ setRate=20;
 
     if (hitZoneDist1 <= 30) {
         //console.log("We are totally in the zone!");
-        image(shoes, 600, 550, 80, 80);
-        setRate=5;
+        image(shoes, 600, 350, 100, 100);
+        setRate = 5;
         if (!soundFile2.isPlaying()) {
             soundFile2.setVolume(1);
             soundFile2.play();
@@ -137,30 +138,29 @@ setRate=20;
     if (hitZoneDist2 <= 30) {
         //console.log("We are totally in the zone!");
         image(watermelon, 100, 100, 100, 100);
-        soundFile2.setVolume(1);
-        setRate =40;
+        setRate = 40;
         if (!soundFile2.isPlaying()) {
             soundFile2.setVolume(1);
             soundFile2.play();
         }
 
     }
-//    var hitZoneDist3 = dist(hitZoneX3, hitZoneY3, mouseX, mouseY);
-//    if (hitZoneDist3 <= 30) {
-//        //console.log("We are totally in the zone!");
-//        image(banana, 650, 100, 100, 100);
-//        setRate=40;;
-//        if (!soundFile2.isPlaying()) {
-//            soundFile2.setVolume(1);
-//            soundFile2.play();
-//        }
-//
-//
-//    }
+    //    var hitZoneDist3 = dist(hitZoneX3, hitZoneY3, mouseX, mouseY);
+    //    if (hitZoneDist3 <= 30) {
+    //        //console.log("We are totally in the zone!");
+    //        image(banana, 650, 100, 100, 100);
+    //        setRate=40;;
+    //        if (!soundFile2.isPlaying()) {
+    //            soundFile2.setVolume(1);
+    //            soundFile2.play();
+    //        }
+    //
+    //
+    //    }
 
-    //    strokeWeight(5);
-    //    ellipse(hitZoneX1, hitZoneY1, 10, 10);
-    //    ellipse(hitZoneX2, hitZoneY2, 10, 10);
+//     strokeWeight(5);
+//     ellipse(hitZoneX1, hitZoneY1, 10, 10);
+//       ellipse(hitZoneX2, hitZoneY2, 10, 10);
     //    ellipse(hitZoneX3, hitZoneY3, 10, 10);
 
     //hitzones(target fish)
@@ -211,12 +211,12 @@ setRate=20;
     interfaceItems[2].display();
     interfaceItems[3].check();
     interfaceItems[3].display();
-    
+
     fill(0);
-    text("setting back", 117, 625);
+    text("start music", 122, 625);
     text("animation", 325, 625);
-    text("start music", 520, 625);
-    text("stop music", 720, 625);
+    text("stop music", 522, 625);
+    text("setting back", 718, 625);
 
 
 }
@@ -250,15 +250,10 @@ Bubble.prototype.draw = function () {
 
 function mousePressed() {
     if (interfaceItems[0].check() == true) {
-        setRate =30
-        currentBgImage = bgImage2;
-        console.log("loading bgimage2");
-        soundFile1.stop();
-        soundFile2.stop();
-        soundFile3.stop();
-        jelly.stop();
-        waterp.stop();
-        waterp1.stop();
+         soundFile1.play();
+        soundFile1.setVolume(0.3)
+        soundFile1.rate(0.8);
+
     }
 
     if (interfaceItems[1].check() == true) {
@@ -269,15 +264,22 @@ function mousePressed() {
     }
 
     if (interfaceItems[2].check() == true) {
-        soundFile1.play();
-        soundFile1.setVolume(0.3)
-        soundFile1.rate(0.8);
-    }
-
-    if (interfaceItems[3].check() == true) {
         soundFile1.stop();
         soundFile2.stop();
         soundFile3.stop();
+    }
+
+    if (interfaceItems[3].check() == true) {
+                setRate = 30
+        currentBgImage = bgImage2;
+        console.log("loading bgimage2");
+        soundFile1.stop();
+        soundFile2.stop();
+        soundFile3.stop();
+        jelly.stop();
+        waterp.stop();
+        waterp1.stop();
+        
     }
 }
 
