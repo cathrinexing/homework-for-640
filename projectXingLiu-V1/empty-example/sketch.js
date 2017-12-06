@@ -47,30 +47,16 @@ function preload() {
 
 function setup() {
     createCanvas(900, 700);
-    interfaceItems.push(new interface(550, 650, 30, color(255, 51, 153)));
-    text("setting back", 550, 690);
-    interfaceItems.push(new interface(650, 650, 30, color(102, 153, 255)));
-    text("animation", 650, 690);
+    interfaceItems.push(new interface(110, 610, 80,25, color(255, 51, 153)));
+    text("setting back", 110,650);
+    interfaceItems.push(new interface(310, 610, 80,25,color(102, 153, 255)));
+    text("animation", 310, 650);
+ interfaceItems.push(new interface(510, 610, 80,25,color(102, 153, 255)));
+    text("animation", 310, 650);
+    interfaceItems.push(new interface(710, 610, 80,25,color(102, 153, 255)));
+    text("animation", 310, 650);
 
-    bgChange = createButton("setting back");
-    bgChange.position(200, 600);
-    bgChange.mousePressed(changeBgFunction);
-
-    bgChange2 = createButton("animation");
-    bgChange2.position(400, 600);
-    bgChange2.mousePressed(changeBgFunction2);
-
-    currentBgImage = bgImage2;
-
-    bgChange3 = createButton("stop music");
-    bgChange3.position(600, 600);
-    bgChange3.mousePressed(changeBgFunction3);
-
-
-    bgChange4 = createButton("start music");
-    bgChange4.position(800, 600);
-    bgChange4.mousePressed(changeBgFunction4);
-
+  currentBgImage = bgImage2;
 
     noStroke();
 
@@ -223,7 +209,10 @@ function draw() {
     interfaceItems[0].display();
     interfaceItems[1].check();
     interfaceItems[1].display();
-
+interfaceItems[2].check();
+    interfaceItems[2].display();
+    interfaceItems[3].check();
+    interfaceItems[3].display();
 
 
 
@@ -255,75 +244,60 @@ Bubble.prototype.draw = function () {
 };
 
 //button function
-function changeBgFunction() {
-    currentBgImage = bgImage2;
+
+function mousePressed() {
+    if (interfaceItems[0].check() == true) {
+         currentBgImage = bgImage2;
     console.log("loading bgimage2");
     soundFile1.stop();
+     soundFile2.stop(); 
+    soundFile3.stop();
     jelly.stop();
     waterp.stop();
     waterp1.stop();
-}
+    }
 
-function changeBgFunction2() {
-    setRate=20;
+    if (interfaceItems[1].check() == true) {
+       setRate=20;
     jelly.play();
     waterp.play();
     waterp1.play();
-}
-
-function changeBgFunction3() {
-    soundFile1.stop();
-    soundFile2.stop();
-    soundFile3.stop();
-}
-
-function changeBgFunction4() {
-    soundFile1.play();
+    }
+    
+      if (interfaceItems[2].check() == true) {
+        soundFile1.play();
     soundFile1.setVolume(0.3)
     soundFile1.rate(0.8);
-}
-
-
-
-function mousePressed() {
-    if (interfaceItems[1].check() == true) {
-        currentBgImage = bgImage2;
-        console.log("loading bgimage2");
-        soundFile1.stop();
-        setRate=30;
-        jelly.stop();
-        waterp.stop();
-        waterp1.stop();
     }
-
-    if (interfaceItems[1].check() == true) {
-        setRate=20;
-        jelly.play();
-        waterp.play();
-        waterp1.play();
+    
+      if (interfaceItems[3].check() == true) {
+       soundFile1.stop();
+    soundFile2.stop();
+    soundFile3.stop();
     }
 }
 
-function interface(tempX, tempY, tempBoxSize, tempColor) {
+function interface(tempX, tempY, tempBoxSizeX,tempBoxSizeY, tempColor) {
     this.x = tempX;
     this.y = tempY;
-    this.boxSize = tempBoxSize;
+    this.boxSize1 = tempBoxSizeX;
+    this.boxSize2 = tempBoxSizeY;
     this.setFill = tempColor;
     this.overlay = false;
 
     this.display = function () {
         fill(this.setFill);
-        rect(this.x, this.y, this.boxSize, this.boxSize);
+        rect(this.x, this.y, this.boxSize1, this.boxSize2);
 
         if (this.overlay == true) {
             fill(0, 100);
-            rect(this.x, this.y, this.boxSize, this.boxSize);
+            rect(this.x, this.y, this.boxSize1, this.boxSize2);
         }
 
     }
 
     this.check = function () {
-        if (mouseX > this.x && mouseX < (this.x + this.boxSize) && mouseY > this.y && mouseY < (this.y + this.boxSize)) {
+        if (mouseX > this.x && mouseX < (this.x + this.boxSize1) && mouseY > this.y && mouseY < (this.y + this.boxSize2)) {
             this.overlay = true;
             return true;
         } else {
