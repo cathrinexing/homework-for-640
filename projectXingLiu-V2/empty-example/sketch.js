@@ -49,13 +49,9 @@ function setup() {
     createCanvas(900, 680);
 
     interfaceItems.push(new interface(110, 610, 80, 25, color(230, 230, 250)));
-    text("setting back", 110, 650);
     interfaceItems.push(new interface(310, 610, 80, 25, color(230, 230, 250)));
-    text("animation", 310, 650);
     interfaceItems.push(new interface(510, 610, 80, 25, color(230, 230, 250)));
-    text("animation", 310, 650);
     interfaceItems.push(new interface(710, 610, 80, 25, color(230, 230, 250)));
-    text("animation", 310, 650);
 
     currentBgImage = bgImage2;
 
@@ -79,6 +75,7 @@ function setup() {
 
     //select the random fish as a target
     randomFish = int(random(p.length));
+    //animation setting
     jelly.stop();
     waterp.stop();
     waterp1.stop();
@@ -89,9 +86,7 @@ function draw() {
     background("white");
     frameRate(setRate);
     setRate = 20;
-
     imageMode(CENTER);
-
     image(currentBgImage, 450, 300, 900, 600);
 
 
@@ -113,10 +108,7 @@ function draw() {
     animation(waterp1, 550, 490);
 
 
-    //    if (mouseIsPressed)
-    //        jelly.play();
-    //    else
-    //        jelly.stop();
+ 
 
     //hitzones(food)
     var hitZoneDist1 = dist(hitZoneX1, hitZoneY1, mouseX, mouseY);
@@ -257,7 +249,7 @@ function mousePressed() {
     }
 
     if (interfaceItems[1].check() == true) {
-        setRate = 10;
+        setRate = 20;
         jelly.play();
         waterp.play();
         waterp1.play();
@@ -270,7 +262,7 @@ function mousePressed() {
     }
 
     if (interfaceItems[3].check() == true) {
-                setRate = 30
+        setRate = 20;
         currentBgImage = bgImage2;
         console.log("loading bgimage2");
         soundFile1.stop();
