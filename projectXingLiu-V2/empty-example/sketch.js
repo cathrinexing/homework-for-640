@@ -8,7 +8,7 @@ var fishImage;
 var shoes;
 var peach;
 var watermelon;
-var banana;
+//var banana;
 var hitZoneX1 = 600;
 var hitZoneY1 = 350;
 var hitZoneX2 = 100;
