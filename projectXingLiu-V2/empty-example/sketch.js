@@ -5,7 +5,7 @@ var numberBubbles = 20;
 var bgImage0, bgImage, bgImage2;
 var currentBgImage;
 var fishImage;
-var orangeImage;
+var shoes;
 var peach;
 var watermelon;
 var banana;
@@ -13,8 +13,8 @@ var hitZoneX1 = 600;
 var hitZoneY1 = 350;
 var hitZoneX2 = 100;
 var hitZoneY2 = 100;
-var hitZoneX3 = 650;
-var hitZoneY3 = 100;
+//var hitZoneX3 = 650;
+//var hitZoneY3 = 100;
 var soundFile1, soundFile2, soundFile3, soundFile4;
 var p = [];
 var jelly;
@@ -128,7 +128,6 @@ function draw() {
             soundFile2.setVolume(0.6);
             soundFile2.play();
         }
-
 
     }
 
