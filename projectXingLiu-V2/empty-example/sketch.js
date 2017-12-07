@@ -122,7 +122,7 @@ function draw() {
     if (hitZoneDist1 <= 30) {
         //console.log("We are totally in the zone!");
         image(shoes, 600, 350, 100, 100);
-        setRate = 5;
+        setRate =2;
         if (!soundFile2.isPlaying()) {
             soundFile2.setVolume(1);
             soundFile2.play();
@@ -136,7 +136,7 @@ function draw() {
     if (hitZoneDist2 <= 30) {
         //console.log("We are totally in the zone!");
         image(watermelon, 100, 100, 100, 100);
-//        setRate = 40;
+        setRate = 60;
         soundFile4.rate(3);
         if (!soundFile4.isPlaying()) {
             soundFile4.setVolume(1);
@@ -189,9 +189,6 @@ function draw() {
     } else {
         fishDisappear = false;
         currentBgImage = bgImage2;
-        waterp.stop();
-        jelly.stop();
-        waterp1.stop();
         soundFile3.stop();
        
     }
