@@ -24,7 +24,7 @@ var randomFish = 0;
 var interfaceItems = [];
 var setRate = 20;
 
-var positionArray = [[100,100], [200,200],[300,300]];
+var positionArray = [[100, 100], [200, 200], [300, 300]];
 
 var fishDisappear = false;
 
@@ -69,7 +69,7 @@ function setup() {
     for (var i = 0; i < 3; i++) {
         var pString = "assets/fishp" + i + ".png";
         var curFish = [];
-        
+
         var randPos = random(positionArray.length);
         var curLocation = positionArray.splice(randPos, 1);
         curFish[0] = curLocation[0][0];
@@ -114,7 +114,7 @@ function draw() {
     animation(waterp1, 550, 490);
 
 
- 
+
 
     //hitzones(food)
     var hitZoneDist1 = dist(hitZoneX1, hitZoneY1, mouseX, mouseY);
@@ -137,9 +137,10 @@ function draw() {
         //console.log("We are totally in the zone!");
         image(watermelon, 100, 100, 100, 100);
         setRate = 40;
-        if (!soundFile2.isPlaying()) {
-            soundFile2.setVolume(1);
-            soundFile2.play();
+        soundFile4.rate(3);
+        if (!soundFile4.isPlaying()) {
+            soundFile4.setVolume(1);
+            soundFile4.play();
         }
 
     }
@@ -156,9 +157,9 @@ function draw() {
     //
     //    }
 
-//     strokeWeight(5);
-//     ellipse(hitZoneX1, hitZoneY1, 10, 10);
-//       ellipse(hitZoneX2, hitZoneY2, 10, 10);
+    //     strokeWeight(5);
+    //     ellipse(hitZoneX1, hitZoneY1, 10, 10);
+    //       ellipse(hitZoneX2, hitZoneY2, 10, 10);
     //    ellipse(hitZoneX3, hitZoneY3, 10, 10);
 
     //hitzones(target fish)
@@ -181,14 +182,19 @@ function draw() {
             soundFile3.setVolume(1);
             soundFile3.play();
         }
-        
+
         fishDisappear = true;
 
 
-    }else{
+    } else {
         fishDisappear = false;
         currentBgImage = bgImage2;
-
+        waterp.stop();
+        jelly.stop();
+        waterp1.stop();
+        soundFile3.stop();
+        soundFile2.stop();
+        soundFile4.stop();
     }
 
 
@@ -201,16 +207,16 @@ function draw() {
 
     //fish show
     //    imageMode(CORNER);
-    if(fishDisappear == false){
-    for (var i = 0; i < 3; i++) {
-        
-                   image(p[i][2], p[i][0], p[i][1], p[i][2].width / 3, p[i][2].height / 3);
-           }
+    if (fishDisappear == false) {
+        for (var i = 0; i < 3; i++) {
+
+            image(p[i][2], p[i][0], p[i][1], p[i][2].width / 3, p[i][2].height / 3);
+        }
     }
-    
-    if(fishDisappear == true){
-              image(p[randomFish][2], p[randomFish][0], p[randomFish][1], p[randomFish][2].width / 3, p[randomFish][2].height / 3); 
-           }
+
+    if (fishDisappear == true) {
+        image(p[randomFish][2], p[randomFish][0], p[randomFish][1], p[randomFish][2].width / 3, p[randomFish][2].height / 3);
+    }
 
 
     //interface button  
@@ -261,8 +267,8 @@ Bubble.prototype.draw = function () {
 
 function mousePressed() {
     if (interfaceItems[0].check() == true) {
-         soundFile1.play();
-        soundFile1.setVolume(0.3)
+        soundFile1.play();
+        soundFile1.setVolume(0.5)
         soundFile1.rate(0.8);
 
     }
@@ -287,10 +293,11 @@ function mousePressed() {
         soundFile1.stop();
         soundFile2.stop();
         soundFile3.stop();
+        soundFile4.stop();
         jelly.stop();
         waterp.stop();
         waterp1.stop();
-        
+
     }
 }
 
