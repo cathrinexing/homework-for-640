@@ -24,7 +24,7 @@ var randomFish = 0;
 var interfaceItems = [];
 var setRate = 20;
 
-var positionArray = [[100, 100], [200, 200], [300, 300]];
+var positionArray = [[100, 300], [300, 200], [500, 250]];
 
 var fishDisappear = false;
 
