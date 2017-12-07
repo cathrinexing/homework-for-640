@@ -123,9 +123,9 @@ function draw() {
         //console.log("We are totally in the zone!");
         image(shoes, 600, 350, 100, 100);
         setRate =2;
-         soundFile2.rate(2);
+         soundFile2.rate(1);
         if (!soundFile2.isPlaying()) {
-            soundFile2.setVolume(0.8);
+            soundFile2.setVolume(0.6);
             soundFile2.play();
         }
 
