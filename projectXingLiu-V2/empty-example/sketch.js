@@ -24,6 +24,9 @@ var randomFish = 0;
 var interfaceItems = [];
 var setRate = 20;
 
+var positionArray = [[100,100], [200,200],[300,300]];
+
+var fishDisappear = false;
 
 
 function preload() {
@@ -38,7 +41,7 @@ function preload() {
     soundFile1 = loadSound("assets/back.mp3");
     soundFile2 = loadSound("assets/food.mp3");
     soundFile3 = loadSound("assets/heart.mp3");
-    souldFile4 = loadSound("assets/correct.mp3");
+    soundFile4 = loadSound("assets/correct.mp3");
     jelly = loadAnimation("assets/jellyfish0.png", "assets/jellyfish1.png");
     waterp = loadAnimation("assets/waterp0.png", "assets/waterp1.png");
     waterp1 = loadAnimation("assets/waterp2.png", "assets/waterp3.png");
@@ -66,8 +69,11 @@ function setup() {
     for (var i = 0; i < 3; i++) {
         var pString = "assets/fishp" + i + ".png";
         var curFish = [];
-        curFish[0] = random(100, 800);
-        curFish[1] = random(100, 500);
+        
+        var randPos = random(positionArray.length);
+        var curLocation = positionArray.splice(randPos, 1);
+        curFish[0] = curLocation[0][0];
+        curFish[1] = curLocation[0][1];
         console.log(curFish[0]);
         curFish[2] = loadImage(pString);
         p.push(curFish);
@@ -175,7 +181,13 @@ function draw() {
             soundFile3.setVolume(1);
             soundFile3.play();
         }
+        
+        fishDisappear = true;
 
+
+    }else{
+        fishDisappear = false;
+        currentBgImage = bgImage2;
 
     }
 
@@ -189,9 +201,16 @@ function draw() {
 
     //fish show
     //    imageMode(CORNER);
+    if(fishDisappear == false){
     for (var i = 0; i < 3; i++) {
-        image(p[i][2], p[i][0], p[i][1], p[i][2].width / 3, p[i][2].height / 3);
+        
+                   image(p[i][2], p[i][0], p[i][1], p[i][2].width / 3, p[i][2].height / 3);
+           }
     }
+    
+    if(fishDisappear == true){
+              image(p[randomFish][2], p[randomFish][0], p[randomFish][1], p[randomFish][2].width / 3, p[randomFish][2].height / 3); 
+           }
 
 
     //interface button  
