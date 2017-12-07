@@ -136,7 +136,7 @@ function draw() {
     if (hitZoneDist2 <= 30) {
         //console.log("We are totally in the zone!");
         image(watermelon, 100, 100, 100, 100);
-        setRate = 40;
+//        setRate = 40;
         soundFile4.rate(3);
         if (!soundFile4.isPlaying()) {
             soundFile4.setVolume(1);
@@ -193,8 +193,7 @@ function draw() {
         jelly.stop();
         waterp1.stop();
         soundFile3.stop();
-        soundFile2.stop();
-        soundFile4.stop();
+       
     }
 
 
