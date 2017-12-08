@@ -2,7 +2,7 @@
 # final code plan-final(2nd) version
 
 
-##### First, I need define my variables, such as bubble and fish picture arrays and other pictures I need, also there are some hitzone positions and the music.
+##### First, I need define my variables, such as bubble and fish picture and position arrays and other pictures I need, also there are some hitzone positions and the music.
 
 ##### Then, I need to preload my images, animations and music.
 
