@@ -221,10 +221,10 @@ function draw() {
     interfaceItems[3].display();
 
     fill(0);
-    text("start music", 122, 625);
-    text("animation", 325, 625);
-    text("stop music", 522, 625);
-    text("setting back", 718, 625);
+    text("Start Music", 122, 625);
+    text("Animation", 325, 625);
+    text("Stop Music", 522, 625);
+    text("Setting Back", 718, 625);
 
 
 }
