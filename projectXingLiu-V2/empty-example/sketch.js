@@ -1,10 +1,10 @@
 var posX = 0;
 var posY = 0;
 var p = [];
+var b = [];
 var interfaceItems = [];
 var positionArray = [[100, 300], [300, 200], [500, 250]];
-var b = [];
-var numberBubbles = 20;
+var numberBubbles = 50;
 var bgImage0, bgImage, bgImage2;
 var currentBgImage;
 var fishImage;
@@ -55,7 +55,7 @@ function setup() {
 
     noStroke();
 
-    //adds 20 bubbles to the array
+    //adds 50 bubbles to the array
     for (var g = 0; g < numberBubbles; g++) {
         b.push(new Bubble());
 
@@ -76,6 +76,7 @@ function setup() {
 
     //select the random fish as a target
     randomFish = int(random(p.length));
+    
     //animation setting
     jelly.stop();
     waterp.stop();
@@ -243,7 +244,7 @@ function Bubble() {
 Bubble.prototype.constructor = Bubble;
 Bubble.prototype.move = function () {
     this.y -= this.speed;
-    if (this.y < -this.size * 2) {
+    if (this.y < -this.size * 1) {
         this.y = height + random(this.size * 2, this.size * 20);
     }
 };
