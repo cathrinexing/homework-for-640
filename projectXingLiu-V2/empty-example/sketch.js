@@ -1,31 +1,26 @@
 var posX = 0;
 var posY = 0;
+var p = [];
+var interfaceItems = [];
+var positionArray = [[100, 300], [300, 200], [500, 250]];
 var b = [];
 var numberBubbles = 20;
 var bgImage0, bgImage, bgImage2;
 var currentBgImage;
 var fishImage;
-var shoes;
 var peach;
-var watermelon;
+var watermelon, shoes;
 //var banana;
 var hitZoneX1 = 600;
 var hitZoneY1 = 350;
-var hitZoneX2 = 100;
-var hitZoneY2 = 100;
+var hitZoneX2 = 700;
+var hitZoneY2 = 150;
 //var hitZoneX3 = 650;
 //var hitZoneY3 = 100;
 var soundFile1, soundFile2, soundFile3, soundFile4;
-var p = [];
-var jelly;
-var waterp;
-var waterp1;
+var jelly, waterp, waterp1;
 var randomFish = 0;
-var interfaceItems = [];
 var setRate = 20;
-
-var positionArray = [[100, 300], [300, 200], [500, 250]];
-
 var fishDisappear = false;
 
 
@@ -122,8 +117,8 @@ function draw() {
     if (hitZoneDist1 <= 30) {
         //console.log("We are totally in the zone!");
         image(shoes, 600, 350, 100, 100);
-        setRate =2;
-         soundFile2.rate(1);
+        setRate = 2;
+        soundFile2.rate(1);
         if (!soundFile2.isPlaying()) {
             soundFile2.setVolume(0.6);
             soundFile2.play();
@@ -135,7 +130,7 @@ function draw() {
     var hitZoneDist2 = dist(hitZoneX2, hitZoneY2, mouseX, mouseY);
     if (hitZoneDist2 <= 30) {
         //console.log("We are totally in the zone!");
-        image(watermelon, 100, 100, 100, 100);
+        image(watermelon, 700, 150, 100, 100);
         setRate = 60;
         soundFile4.rate(3);
         if (!soundFile4.isPlaying()) {
@@ -190,7 +185,7 @@ function draw() {
         fishDisappear = false;
         currentBgImage = bgImage2;
         soundFile3.stop();
-       
+
     }
 
 
