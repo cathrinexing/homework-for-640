@@ -1,4 +1,4 @@
-# final code plan-1st version
+# final code plan-final(2nd) version
 ##### First, I need define my variables, such as bubble and fish picture array and other pictures I need, also there are some hit zone position and music.
 
 ##### Then, I need to preload my images, animations and music.
