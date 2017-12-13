@@ -10,13 +10,13 @@ var currentBgImage;
 var fishImage;
 var peach;
 var watermelon, shoes;
-//var banana;
+var banana;
 var hitZoneX1 = 600;
 var hitZoneY1 = 350;
 var hitZoneX2 = 700;
 var hitZoneY2 = 150;
-//var hitZoneX3 = 650;
-//var hitZoneY3 = 100;
+var hitZoneX3 = 200;
+var hitZoneY3 = 300;
 var soundFile1, soundFile2, soundFile3, soundFile4;
 var jelly, waterp, waterp1;
 var randomFish = 0;
@@ -34,6 +34,7 @@ function preload() {
     fishImage = loadImage("assets/fish.png");
     peach = loadImage("assets/peach.png");
     shoes = loadImage("assets/shoes.png");
+    banana = loadImage("assets/banana.png");
     watermelon = loadImage("assets/watermelon.png");
     banana = loadImage("assets/banana.png");
     soundFile1 = loadSound("assets/back.mp3");
@@ -53,7 +54,9 @@ function setup() {
     interfaceItems.push(new interface(500, 610, 100, 25, color(230, 230, 250)));
  
     currentBgImage = bgImage2;
-
+ soundFile1.play();
+    soundFile1.setVolume(0.5)
+  
     noStroke();
 
     //adds 50 bubbles to the array
@@ -88,9 +91,7 @@ function draw() {
     setRate = 20;
     imageMode(CENTER);
     image(currentBgImage, 450, 300, 900, 600);
-    soundFile1.play();
-    soundFile1.setVolume(0.5)
-    soundFile1.rate(0.5);
+   
 
 
     //hero fish
@@ -110,11 +111,13 @@ function draw() {
     animation(waterp1, 550, 490);
 
 
-
+//hitzones(food)
     if (startEating == true) {
-
-
-        //hitzones(food)
+ fill(255);
+        textSize(20);
+ text("On your way to find your food", 330, 80);
+        
+        startMating =false;
         var hitZoneDist1 = dist(hitZoneX1, hitZoneY1, mouseX, mouseY);
 
         if (hitZoneDist1 <= 30) {
@@ -123,7 +126,7 @@ function draw() {
             setRate = 2;
             soundFile2.rate(1);
             if (!soundFile2.isPlaying()) {
-                soundFile2.setVolume(0.6);
+                soundFile2.setVolume(0.5);
                 soundFile2.play();
             }
 
@@ -142,19 +145,21 @@ function draw() {
             }
 
         }
+         var hitZoneDist3 = dist(hitZoneX3, hitZoneY3, mouseX, mouseY);
+        if (hitZoneDist3 <= 30) {
+            //console.log("We are totally in the zone!");
+            image(banana, 200, 300, 100, 100);
+            setRate=60;;
+              soundFile4.rate(3);
+            if (!soundFile4.isPlaying()) {
+                soundFile4.setVolume(1);
+                soundFile4.play();
+            }
+    
+    
+        }
     }
-    //    var hitZoneDist3 = dist(hitZoneX3, hitZoneY3, mouseX, mouseY);
-    //    if (hitZoneDist3 <= 30) {
-    //        //console.log("We are totally in the zone!");
-    //        image(banana, 650, 100, 100, 100);
-    //        setRate=60;;
-    //        if (!soundFile2.isPlaying()) {
-    //            soundFile2.setVolume(1);
-    //            soundFile2.play();
-    //        }
-    //
-    //
-    //    }
+       
 
     //     strokeWeight(5);
     //     ellipse(hitZoneX1, hitZoneY1, 10, 10);
@@ -164,6 +169,11 @@ function draw() {
     //hitzones(target fish)
 
     if (startMating == true) {
+        startEating =false;
+        fill(255);
+        textSize(20);
+        text("On your way to find your mate", 330, 100);
+   
         var hitZoneDist0 = dist(p[randomFish][0], p[randomFish][1], mouseX, mouseY);
         console.log("randomFish: " + randomFish);
 
@@ -230,6 +240,7 @@ function draw() {
     //    interfaceItems[3].check();
     //    interfaceItems[3].display();
 
+      textSize(12);
     fill(0);
     text("Find your food", 310, 625);
     text("Find your mate", 510, 625);
