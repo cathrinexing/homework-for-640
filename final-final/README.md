@@ -6,9 +6,9 @@
 
 ##### Then, I need to preload my images, animations and music.
 
-##### Thirdly, I create my canvas and interface buttons, and set my current background picture. Also,i add bubble, random fishes arrays and random positions of my food and set default to animations in the setup.
+##### Thirdly, I create my canvas and interface buttons, and set my current background picture. Also,i add bubble, random fishes arrays and random positions of my food in the setup.
 
-##### Fourthly, I add background and draw my hero fish(the eyes of my hero have mapping function) to the draw. Also, I set if statement to my hitzones to add some interesting scenarios(such as show pictures and text, play sounds and change framerate). Then I add random target fishes to the draw.
+##### Fourthly, I add background and draw my hero fish(the eyes of my hero have mapping function) to the draw. Also, I set if statements to my hitzones to add some interesting scenarios(such as showing pictures and text, playing sounds and changing framerate). Then I add random target fish to the draw,.
 ##### finally，i write bubble ,interface and "mousepressed" functions.
 
 # the user interaction explanation

@@ -291,25 +291,7 @@ function mousePressed() {
 
     }
 
-    //    if (interfaceItems[2].check() == true) {
-    //        soundFile1.stop();
-    //        soundFile2.stop();
-    //        soundFile3.stop();
-    //    }
-    //
-    //    if (interfaceItems[3].check() == true) {
-    //        setRate = 20;
-    //        currentBgImage = bgImage2;
-    //        console.log("loading bgimage2");
-    //        soundFile1.stop();
-    //        soundFile2.stop();
-    //        soundFile3.stop();
-    //        soundFile4.stop();
-    //        jelly.stop();
-    //        waterp.stop();
-    //        waterp1.stop();
-    //
-    //    }
+  
 }
 
 function interface(tempX, tempY, tempBoxSizeX, tempBoxSizeY, tempColor) {
