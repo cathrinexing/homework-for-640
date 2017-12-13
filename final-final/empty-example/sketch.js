@@ -121,7 +121,7 @@ function draw() {
 
         if (hitZoneDist1 <= 30) {
             //console.log("We are totally in the zone!");
-           
+
             image(shoes, 600, 350, 100, 100);
             setRate = 2;
             soundFile2.rate(1);
@@ -159,7 +159,7 @@ function draw() {
 
         }
     }
-//    startEating = false;
+    //    startEating = false;
 
 
     //     strokeWeight(5);
@@ -183,7 +183,7 @@ function draw() {
             currentBgImage = bgImage0;
             image(peach, 600, 350, 200, 200);
             setRate = 60;
-        
+
             soundFile1.stop();
             if (!soundFile3.isPlaying()) {
                 soundFile3.setVolume(1);
@@ -201,8 +201,8 @@ function draw() {
         }
 
     }
-//    startMating = false;
-    
+    //    startMating = false;
+
     //bubles show
     for (var g = 0; g < b.length; g++) {
         b[g].move();
@@ -279,13 +279,13 @@ function mousePressed() {
     if (interfaceItems[0].check() == true) {
 
         startEating = true;
-         currentBgImage=bgImage1;
+        currentBgImage = bgImage1;
         //else
 
     }
 
     if (interfaceItems[1].check() == true) {
-         currentBgImage=bgImage2;
+        currentBgImage = bgImage2;
         setRate = 20;
         jelly.play();
         waterp.play();

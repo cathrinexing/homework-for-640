@@ -22,24 +22,24 @@ function setup() {
     text("rect", 40, 225);
     text("ellipse", 85, 225);
     interfaceItems.push(new interface(50, 200, 30, color(127, 255, 170)));
-     interfaceItems.push(new interface(100, 200, 30, color(135, 206, 235)));
-    
+    interfaceItems.push(new interface(100, 200, 30, color(135, 206, 235)));
+
 }
 
 function draw() {
 
     fill(brushColor);
-      if(brushShape == true){
-    ellipse(mouseX, mouseY, brushSize, brushSize);
-    }else{
-    rect(mouseX, mouseY, brushSize, brushSize)
+    if (brushShape == true) {
+        ellipse(mouseX, mouseY, brushSize, brushSize);
+    } else {
+        rect(mouseX, mouseY, brushSize, brushSize)
     }
-   
+
     for (var i = 0; i < 8; i++) {
         interfaceItems[i].check();
         interfaceItems[i].display();
-}
-   
+    }
+
 }
 
 function mousePressed() {
@@ -64,8 +64,8 @@ function mousePressed() {
     if (interfaceItems[5].check() == true) {
         brushColor = (125, 125, 125);
     }
-  if (interfaceItems[6].check() == true) {
-        brushShape =false;
+    if (interfaceItems[6].check() == true) {
+        brushShape = false;
     }
     if (interfaceItems[7].check() == true) {
         brushShape = true;
