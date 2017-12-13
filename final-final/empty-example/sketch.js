@@ -50,11 +50,11 @@ function setup() {
 
     interfaceItems.push(new interface(300, 610, 100, 25, color(230, 230, 250)));
     interfaceItems.push(new interface(500, 610, 100, 25, color(230, 230, 250)));
- 
+
     currentBgImage = bgImage2;
- soundFile1.play();
+    soundFile1.play();
     soundFile1.setVolume(0.5)
-  
+
     noStroke();
 
     //adds 50 bubbles to the array
@@ -89,7 +89,7 @@ function draw() {
     setRate = 20;
     imageMode(CENTER);
     image(currentBgImage, 450, 300, 900, 600);
-   
+
 
 
     //hero fish
@@ -109,13 +109,13 @@ function draw() {
     animation(waterp1, 550, 490);
 
 
-//hitzones(food)
+    //hitzones(food)
     if (startEating == true) {
- fill(255);
+        fill(255);
         textSize(20);
- text("On your way to find your food", 330, 80);
-        
-        startMating =false;
+        text("On your way to find your food", 330, 80);
+
+        //        startMating =false;
         var hitZoneDist1 = dist(hitZoneX1, hitZoneY1, mouseX, mouseY);
 
         if (hitZoneDist1 <= 30) {
@@ -143,21 +143,21 @@ function draw() {
             }
 
         }
-         var hitZoneDist3 = dist(hitZoneX3, hitZoneY3, mouseX, mouseY);
+        var hitZoneDist3 = dist(hitZoneX3, hitZoneY3, mouseX, mouseY);
         if (hitZoneDist3 <= 30) {
             //console.log("We are totally in the zone!");
             image(banana, 200, 300, 100, 100);
-            setRate=60;;
-              soundFile4.rate(3);
+            setRate = 60;;
+            soundFile4.rate(3);
             if (!soundFile4.isPlaying()) {
                 soundFile4.setVolume(1);
                 soundFile4.play();
             }
-    
-    
+
+
         }
     }
-       
+
 
     //     strokeWeight(5);
     //     ellipse(hitZoneX1, hitZoneY1, 10, 10);
@@ -167,11 +167,11 @@ function draw() {
     //hitzones(target fish)
 
     if (startMating == true) {
-        startEating =false;
+        //        startEating =false;
         fill(255);
         textSize(20);
         text("On your way to find your mate", 330, 100);
-   
+
         var hitZoneDist0 = dist(p[randomFish][0], p[randomFish][1], mouseX, mouseY);
         console.log("randomFish: " + randomFish);
 
@@ -238,7 +238,7 @@ function draw() {
     //    interfaceItems[3].check();
     //    interfaceItems[3].display();
 
-      textSize(12);
+    textSize(12);
     fill(0);
     text("Find your food", 310, 625);
     text("Find your mate", 510, 625);
