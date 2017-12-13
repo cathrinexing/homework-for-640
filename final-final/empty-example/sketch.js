@@ -5,7 +5,7 @@ var b = [];
 var interfaceItems = [];
 var positionArray = [[100, 300], [300, 200], [500, 250]];
 var numberBubbles = 50;
-var bgImage0, bgImage, bgImage2;
+var bgImage0, bgImage1, bgImage2;
 var currentBgImage;
 var fishImage;
 var peach;
@@ -26,7 +26,6 @@ var startMating = false;
 
 
 function preload() {
-    // bgImage = loadImage("assets/mate.jpg");
     bgImage0 = loadImage("assets/b2.jpg");
     bgImage1 = loadImage("assets/food.jpg")
     bgImage2 = loadImage("assets/seaw.jpg");
@@ -84,7 +83,7 @@ function setup() {
     hitZoneY2 = random(100, 500);
     hitZoneX1 = random(350, 600);
     hitZoneY1 = random(100, 500);
-    hitZoneX3 = random(650, 900);
+    hitZoneX3 = random(650, 800);
     hitZoneY3 = random(100, 500);
 
 
@@ -121,7 +120,7 @@ function draw() {
     if (startEating == true) {
         fill(255);
         textSize(20);
-        text("On your way to find your food", 330, 80);
+        text("On your way to find your food", 320, 80);
 
         var hitZoneDist1 = dist(hitZoneX1, hitZoneY1, mouseX, mouseY);
 
@@ -161,20 +160,19 @@ function draw() {
 
         }
     }
-  
 
 
-         strokeWeight(5);
-         ellipse(hitZoneX1, hitZoneY1, 10, 10);
-           ellipse(hitZoneX2, hitZoneY2, 10, 10);
-        ellipse(hitZoneX3, hitZoneY3, 10, 10);
+    strokeWeight(5);
+    ellipse(hitZoneX1, hitZoneY1, 10, 10);
+    ellipse(hitZoneX2, hitZoneY2, 10, 10);
+    ellipse(hitZoneX3, hitZoneY3, 10, 10);
 
     //hitzones(target fish)
 
     if (startMating == true) {
         fill(255);
         textSize(20);
-        text("On your way to find your mate", 330, 100);
+        text("On your way to find your mate", 320, 80);
 
         var hitZoneDist0 = dist(p[randomFish][0], p[randomFish][1], mouseX, mouseY);
         console.log("randomFish: " + randomFish);

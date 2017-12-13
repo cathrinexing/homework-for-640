@@ -1,5 +1,5 @@
 
-# final code plan-final(2nd) version
+# final code plan-final version
 
 
 ##### First, I need define my variables, such as bubble, fish pictures, interfaceitems(button), and positions arrays, and hitzones, some pictures(background, peach,watermelon,shoes and animation pictures)and 4 soundfiles.Also the default of my picture and framerate.
