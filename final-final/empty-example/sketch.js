@@ -28,6 +28,7 @@ var startMating = false;
 function preload() {
     // bgImage = loadImage("assets/mate.jpg");
     bgImage0 = loadImage("assets/b2.jpg");
+    bgImage1 = loadImage("assets/food.jpg")
     bgImage2 = loadImage("assets/seaw.jpg");
     fishImage = loadImage("assets/fish.png");
     peach = loadImage("assets/peach.png");
@@ -111,7 +112,7 @@ function draw() {
 
     //hitzones(food)
     if (startEating == true) {
-        fill(255);
+        fill(0);
         textSize(20);
         text("On your way to find your food", 330, 80);
 
@@ -120,6 +121,7 @@ function draw() {
 
         if (hitZoneDist1 <= 30) {
             //console.log("We are totally in the zone!");
+           
             image(shoes, 600, 350, 100, 100);
             setRate = 2;
             soundFile2.rate(1);
@@ -277,10 +279,13 @@ function mousePressed() {
     if (interfaceItems[0].check() == true) {
 
         startEating = true;
+         currentBgImage=bgImage1;
+        //else
 
     }
 
     if (interfaceItems[1].check() == true) {
+         currentBgImage=bgImage2;
         setRate = 20;
         jelly.play();
         waterp.play();
