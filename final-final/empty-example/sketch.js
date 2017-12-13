@@ -112,7 +112,7 @@ function draw() {
 
     //hitzones(food)
     if (startEating == true) {
-        fill(0);
+        fill(255);
         textSize(20);
         text("On your way to find your food", 330, 80);
 
