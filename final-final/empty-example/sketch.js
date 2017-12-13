@@ -178,14 +178,11 @@ function draw() {
         console.log("randomFish: " + randomFish);
 
         if (hitZoneDist0 <= 30) {
-            //      console.log("We are totally in the zone!");
             imageMode(CENTER);
             currentBgImage = bgImage0;
             image(peach, 600, 350, 200, 200);
             setRate = 60;
-            waterp.play();
-            jelly.play();
-            waterp1.play();
+        
             soundFile1.stop();
             if (!soundFile3.isPlaying()) {
                 soundFile3.setVolume(1);
@@ -203,6 +200,7 @@ function draw() {
         }
 
     }
+    
     //bubles show
     for (var g = 0; g < b.length; g++) {
         b[g].move();
