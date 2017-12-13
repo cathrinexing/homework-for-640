@@ -123,7 +123,6 @@ function draw() {
         textSize(20);
         text("On your way to find your food", 330, 80);
 
-        //        startMating =false;
         var hitZoneDist1 = dist(hitZoneX1, hitZoneY1, mouseX, mouseY);
 
         if (hitZoneDist1 <= 30) {
@@ -162,18 +161,17 @@ function draw() {
 
         }
     }
-    //    startEating = false;
+  
 
 
-    //     strokeWeight(5);
-    //     ellipse(hitZoneX1, hitZoneY1, 10, 10);
-    //       ellipse(hitZoneX2, hitZoneY2, 10, 10);
-    //    ellipse(hitZoneX3, hitZoneY3, 10, 10);
+         strokeWeight(5);
+         ellipse(hitZoneX1, hitZoneY1, 10, 10);
+           ellipse(hitZoneX2, hitZoneY2, 10, 10);
+        ellipse(hitZoneX3, hitZoneY3, 10, 10);
 
     //hitzones(target fish)
 
     if (startMating == true) {
-        //        startEating =false;
         fill(255);
         textSize(20);
         text("On your way to find your mate", 330, 100);
