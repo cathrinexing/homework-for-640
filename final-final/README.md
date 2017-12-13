@@ -15,7 +15,7 @@
 ## my project is about my hero fish, who is on his way to find food and his mate.
 #### the hero fish is moving with the mouse,also the eyes of my hero have mapping movement. when you open the site, you cannot find anything, but the background music and animation start .
 ## There are 2 interface buttons below the background:"find your food" and "find your mate".
-### find your food
+### 一.find your food
 #### After clicking "find your food"button, the text"on your way to find your food" would appear. If you find your food (watermelon/banana),
 1. a cheering sound plays;
 2. the bubbles move faster;
@@ -30,7 +30,7 @@
 4. the text"Sorry, you are wrong!" would appear on the top.
 #### Also, the position of non-food product is random.
 
-### find your mate
+###  二.find your mate
 #### After clicking "find your mate"button,if you find your mate,
 1. a very brisk song will play; 
 2. the environment will change;
