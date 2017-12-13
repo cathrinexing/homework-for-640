@@ -79,6 +79,9 @@ function setup() {
 
     //select the random fish as a target
     randomFish = int(random(p.length));
+    
+    hitZoneX2 = random(100,800);
+    hitZoneY2 = random(100,500);
 
 
 }
@@ -120,8 +123,6 @@ function draw() {
         var hitZoneDist1 = dist(hitZoneX1, hitZoneY1, mouseX, mouseY);
 
         if (hitZoneDist1 <= 30) {
-            //console.log("We are totally in the zone!");
-
             image(shoes, 600, 350, 100, 100);
             setRate = 2;
             soundFile2.rate(1);
@@ -135,8 +136,7 @@ function draw() {
 
         var hitZoneDist2 = dist(hitZoneX2, hitZoneY2, mouseX, mouseY);
         if (hitZoneDist2 <= 30) {
-            //console.log("We are totally in the zone!");
-            image(watermelon, 700, 150, 100, 100);
+            image(watermelon, hitZoneX2, hitZoneY2, 100, 100);
             setRate = 60;
             soundFile4.rate(3);
             if (!soundFile4.isPlaying()) {
@@ -147,7 +147,6 @@ function draw() {
         }
         var hitZoneDist3 = dist(hitZoneX3, hitZoneY3, mouseX, mouseY);
         if (hitZoneDist3 <= 30) {
-            //console.log("We are totally in the zone!");
             image(banana, 200, 300, 100, 100);
             setRate = 60;;
             soundFile4.rate(3);
@@ -231,18 +230,11 @@ function draw() {
         interfaceItems[i].display();
 
     }
-    //    interfaceItems[0].check();
-    //    interfaceItems[0].display();
-    //    interfaceItems[1].check();
-    //    interfaceItems[1].display();
-    //    interfaceItems[2].check();
-    //    interfaceItems[2].display();
-    //    interfaceItems[3].check();
-    //    interfaceItems[3].display();
 
     textSize(12);
     fill(0);
     text("Find your food", 310, 625);
+
     text("Find your mate", 510, 625);
 
 
@@ -279,6 +271,7 @@ function mousePressed() {
     if (interfaceItems[0].check() == true) {
 
         startEating = true;
+        startMating = false;
         currentBgImage = bgImage1;
         //else
 
@@ -291,6 +284,8 @@ function mousePressed() {
         waterp.play();
         waterp1.play();
         startMating = true;
+        startEating = false;
+
     }
 
     //    if (interfaceItems[2].check() == true) {
