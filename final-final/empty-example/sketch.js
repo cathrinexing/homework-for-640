@@ -159,6 +159,7 @@ function draw() {
 
         }
     }
+//    startEating = false;
 
 
     //     strokeWeight(5);
@@ -200,6 +201,7 @@ function draw() {
         }
 
     }
+//    startMating = false;
     
     //bubles show
     for (var g = 0; g < b.length; g++) {
