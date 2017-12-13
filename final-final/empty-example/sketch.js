@@ -9,8 +9,7 @@ var bgImage0, bgImage, bgImage2;
 var currentBgImage;
 var fishImage;
 var peach;
-var watermelon, shoes;
-var banana;
+var watermelon, shoes, banana;
 var hitZoneX1 = 600;
 var hitZoneY1 = 350;
 var hitZoneX2 = 700;
@@ -22,7 +21,6 @@ var jelly, waterp, waterp1;
 var randomFish = 0;
 var setRate = 20;
 var fishDisappear = false;
-
 var startEating = false;
 var startMating = false;
 
