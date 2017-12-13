@@ -67,7 +67,6 @@ function draw() {
 
     //eyes
     var wiggleX = map(mouseX, 0, width, -40, 40);
-
     fill(255);
     ellipse(posX - 60, posY - 30, 80, 90);
     ellipse(posX + 60, posY - 30, 80, 90);
@@ -83,6 +82,7 @@ function draw() {
 
 
     //hair
+    strokeWeight(2);
     stroke(0);
     noFill();
     arc(posX, posY, 175, 300, PI + QUARTER_PI, TWO_PI - QUARTER_PI);
@@ -101,7 +101,7 @@ function draw() {
     strokeWeight(8);
     point(posX, posY + 100);
 
-    //mole 
+    //mole
     stroke("#937E57");
     strokeWeight(5);
     point(posX + 80, posY + 10);

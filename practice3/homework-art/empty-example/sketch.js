@@ -19,20 +19,24 @@ function draw() {
 
     noStroke();
 
-
+    //face
     fill("beige");
     ellipse(posX, posY, 250, 300);
 
+    //eyes
     fill(255);
     ellipse(posX - 60, posY - 30, 80, 90);
     ellipse(posX + 60, posY - 30, 80, 90);
     fill(0);
     ellipse(posX - 60, posY - 40, 30, 40);
     ellipse(posX + 60, posY - 40, 30, 40);
+
+    //nose
     fill("yellow");
     triangle(posX, posY + 10, posX - 20, posY + 65, posX + 20, posY + 65);
 
-
+    //hair
+    strokeWeight(2);
     stroke(0);
     noFill();
     arc(posX, posY, 175, 300, PI + QUARTER_PI, TWO_PI - QUARTER_PI);
@@ -41,19 +45,22 @@ function draw() {
     arc(posX, posY, 250, 300, PI, TWO_PI);
     arc(posX, posY, 275, 300, PI, TWO_PI);
 
+    //mouth
     arc(posX - 10, posY + 100, 25, 25, 0, PI);
     arc(posX + 10, posY + 100, 25, 25, 0, PI);
-
     fill("pink");
     noStroke();
     ellipse(posX, posY + 100, 30, 20);
-
     stroke("#937E57");
-    strokeWeight(5);
-    point(posX + 80, posY + 10);
     strokeWeight(8);
     point(posX, posY + 100);
 
+
+    //mole 
+    strokeWeight(5);
+    point(posX + 80, posY + 10);
+
+    //ears
     noStroke();
     fill("beige");
     translate(width / 2, height / 2);
