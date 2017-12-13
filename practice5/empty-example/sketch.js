@@ -34,22 +34,12 @@ function draw() {
     }else{
     rect(mouseX, mouseY, brushSize, brushSize)
     }
-    interfaceItems[0].display();
-    interfaceItems[1].display();
-    interfaceItems[2].display();
-    interfaceItems[3].display();
-    interfaceItems[4].display();
-    interfaceItems[5].display();
-   interfaceItems[6].display();
-    interfaceItems[7].display();
-    interfaceItems[0].check();
-    interfaceItems[1].check();
-    interfaceItems[2].check();
-    interfaceItems[3].check();
-    interfaceItems[4].check();
-    interfaceItems[5].check();
-  interfaceItems[6].check();
-     interfaceItems[7].check();
+   
+    for (var i = 0; i < 8; i++) {
+        interfaceItems[i].check();
+        interfaceItems[i].display();
+}
+   
 }
 
 function mousePressed() {
