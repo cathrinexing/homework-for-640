@@ -79,9 +79,13 @@ function setup() {
 
     //select the random fish as a target
     randomFish = int(random(p.length));
-    
-    hitZoneX2 = random(100,800);
-    hitZoneY2 = random(100,500);
+
+    hitZoneX2 = random(100, 300);
+    hitZoneY2 = random(100, 300);
+    hitZoneX1 = random(301, 600);
+    hitZoneY1 = random(200, 500);
+    hitZoneX3 = random(400, 800);
+    hitZoneY3 = random(100, 500);
 
 
 }
@@ -123,7 +127,7 @@ function draw() {
         var hitZoneDist1 = dist(hitZoneX1, hitZoneY1, mouseX, mouseY);
 
         if (hitZoneDist1 <= 30) {
-            image(shoes, 600, 350, 100, 100);
+            image(shoes, hitZoneX1, hitZoneY1, 100, 100);
             setRate = 2;
             soundFile2.rate(1);
             if (!soundFile2.isPlaying()) {
@@ -147,7 +151,7 @@ function draw() {
         }
         var hitZoneDist3 = dist(hitZoneX3, hitZoneY3, mouseX, mouseY);
         if (hitZoneDist3 <= 30) {
-            image(banana, 200, 300, 100, 100);
+            image(banana, hitZoneX3, hitZoneY3, 100, 100);
             setRate = 60;;
             soundFile4.rate(3);
             if (!soundFile4.isPlaying()) {
