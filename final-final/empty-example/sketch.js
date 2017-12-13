@@ -81,10 +81,10 @@ function setup() {
     randomFish = int(random(p.length));
 
     hitZoneX2 = random(100, 300);
-    hitZoneY2 = random(100, 300);
-    hitZoneX1 = random(301, 600);
-    hitZoneY1 = random(200, 500);
-    hitZoneX3 = random(400, 800);
+    hitZoneY2 = random(100, 500);
+    hitZoneX1 = random(350, 600);
+    hitZoneY1 = random(100, 500);
+    hitZoneX3 = random(650, 900);
     hitZoneY3 = random(100, 500);
 
 
@@ -164,10 +164,10 @@ function draw() {
   
 
 
-    //     strokeWeight(5);
-    //     ellipse(hitZoneX1, hitZoneY1, 10, 10);
-    //       ellipse(hitZoneX2, hitZoneY2, 10, 10);
-    //    ellipse(hitZoneX3, hitZoneY3, 10, 10);
+         strokeWeight(5);
+         ellipse(hitZoneX1, hitZoneY1, 10, 10);
+           ellipse(hitZoneX2, hitZoneY2, 10, 10);
+        ellipse(hitZoneX3, hitZoneY3, 10, 10);
 
     //hitzones(target fish)
 
