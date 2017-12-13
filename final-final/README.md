@@ -13,8 +13,8 @@
 
 # the user interaction explanation
 ## my project is about my hero fish, who is on his way to find food and his mate.
-#### the hero fish is moving with the mouse,also the eyes of my hero have mapping movement. when you open the site, you cannot find anything.
-## There are 2 interface button below my background:"find your food" and "find your mate".
+#### the hero fish is moving with the mouse,also the eyes of my hero have mapping movement. when you open the site, you cannot find anything, but the background music and animation start .
+## There are 2 interface button below the background:"find your food" and "find your mate".
 ### find your food
 #### After clicking "find your food"button, if you find food(watermelon/banana), a cheering sound plays and the bubbles move faster and animation frame becomes fast.Also, the position of these food is random.
 #### if you find a non-food product that cannot be eat(shoes),a slam sound plays and the the bubble move more slowly and animation frame becomes slow.Also, the position of non-food product is random.
