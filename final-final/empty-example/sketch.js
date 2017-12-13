@@ -141,7 +141,7 @@ function draw() {
         if (hitZoneDist2 <= 30) {
             image(watermelon, hitZoneX2, hitZoneY2, 100, 100);
             setRate = 60;
-            text("You find your food！!", 320, 100);
+            text("You find your food!!", 320, 100);
             soundFile4.rate(3);
             if (!soundFile4.isPlaying()) {
                 soundFile4.setVolume(1);
@@ -152,7 +152,7 @@ function draw() {
         var hitZoneDist3 = dist(hitZoneX3, hitZoneY3, mouseX, mouseY);
         if (hitZoneDist3 <= 30) {
             image(banana, hitZoneX3, hitZoneY3, 100, 100);
-            text("You find your food!！", 320, 100);
+            text("You find your food!!", 320, 100);
             setRate = 60;;
             soundFile4.rate(3);
             if (!soundFile4.isPlaying()) {
@@ -165,10 +165,10 @@ function draw() {
     }
 
 
-    strokeWeight(5);
-    ellipse(hitZoneX1, hitZoneY1, 10, 10);
-    ellipse(hitZoneX2, hitZoneY2, 10, 10);
-    ellipse(hitZoneX3, hitZoneY3, 10, 10);
+//    strokeWeight(5);
+//    ellipse(hitZoneX1, hitZoneY1, 10, 10);
+//    ellipse(hitZoneX2, hitZoneY2, 10, 10);
+//    ellipse(hitZoneX3, hitZoneY3, 10, 10);
 
     //hitzones(target fish)
 

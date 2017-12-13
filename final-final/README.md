@@ -16,10 +16,27 @@
 #### the hero fish is moving with the mouse,also the eyes of my hero have mapping movement. when you open the site, you cannot find anything, but the background music and animation start .
 ## There are 2 interface buttons below the background:"find your food" and "find your mate".
 ### find your food
-#### After clicking "find your food"button, if you find food(watermelon/banana), a cheering sound plays and the bubbles move faster and animation frame becomes fast.Also, the position of these food is random.
-#### if you find a non-food product that cannot be eat(shoes),a slam sound plays and the the bubble move more slowly and animation frame becomes slow.Also, the position of non-food product is random.
-### find your mate
-#### After clicking "find your mate"button,if you find your mate(mate is our target fish, which is random),a very brisk song will play and the environment will change. Also you will see a peachheart appearing and the animation become faster.
+#### After clicking "find your food"button, the text"on your way to find your food" would appear. If you find your food (watermelon/banana),
+1. a cheering sound plays;
+2. the bubbles move faster;
+3. animation frame becomes fast;
+4. the text"you find your food!!" would appear on the top.
+#### Also, the position of these food is random.
 
+#### if you find a non-food product that cannot be eat(shoes),
+1. a slam sound plays;
+2. the bubbles move more slowly;
+3. animation frame becomes slower;
+4. the text"Sorry, you are wrong!" would appear on the top.
+#### Also, the position of non-food product is random.
+
+### find your mate
+#### After clicking "find your mate"button,if you find your mate,
+1. a very brisk song will play; 
+2. the environment will change;
+3. display a peachheart;
+4. animation become faster;
+5.  the text" you find your mate!!!" would appear on the top.
+#### Also, the target fish is random.
 
 
