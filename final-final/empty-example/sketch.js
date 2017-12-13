@@ -164,10 +164,10 @@ function draw() {
   
 
 
-         strokeWeight(5);
-         ellipse(hitZoneX1, hitZoneY1, 10, 10);
-           ellipse(hitZoneX2, hitZoneY2, 10, 10);
-        ellipse(hitZoneX3, hitZoneY3, 10, 10);
+    //     strokeWeight(5);
+    //     ellipse(hitZoneX1, hitZoneY1, 10, 10);
+    //       ellipse(hitZoneX2, hitZoneY2, 10, 10);
+    //    ellipse(hitZoneX3, hitZoneY3, 10, 10);
 
     //hitzones(target fish)
 
