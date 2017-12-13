@@ -17,7 +17,7 @@
 ## There are 2 interface button below my background:"find your food" and "find your mate".
 ### find your food
 #### After clicking "find your food"button, if you find food(watermelon/banana), a cheering sound plays and the bubbles move faster and animation frame becomes fast.Also, the position of these food is random.
-#### if you find another thing that cannot be eat(shoes),a slam sound plays and the the bubble move more slowly and animation frame becomes slow.Also, the position of these non-food is random.
+#### if you find a non-food product that cannot be eat(shoes),a slam sound plays and the the bubble move more slowly and animation frame becomes slow.Also, the position of non-food product is random.
 ### find your mate
 #### After clicking "find your mate"button,if you find your mate(mate is our target fish, which is random),a very brisk song will play and the environment changed. Also you will see a peachheart appearing and the animation become faster.
 
