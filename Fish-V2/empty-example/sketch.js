@@ -213,19 +213,19 @@ function draw() {
 
     //interface button 
 
-     for (var i= 0;i< 4; i++) {
-           interfaceItems[i].check();
-            interfaceItems[i].display();
-    
-        }
-//    interfaceItems[0].check();
-//    interfaceItems[0].display();
-//    interfaceItems[1].check();
-//    interfaceItems[1].display();
-//    interfaceItems[2].check();
-//    interfaceItems[2].display();
-//    interfaceItems[3].check();
-//    interfaceItems[3].display();
+    for (var i = 0; i < 4; i++) {
+        interfaceItems[i].check();
+        interfaceItems[i].display();
+
+    }
+    //    interfaceItems[0].check();
+    //    interfaceItems[0].display();
+    //    interfaceItems[1].check();
+    //    interfaceItems[1].display();
+    //    interfaceItems[2].check();
+    //    interfaceItems[2].display();
+    //    interfaceItems[3].check();
+    //    interfaceItems[3].display();
 
     fill(0);
     text("Start Music", 122, 625);

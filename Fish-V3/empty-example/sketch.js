@@ -51,7 +51,7 @@ function setup() {
 
     interfaceItems.push(new interface(300, 610, 100, 25, color(230, 230, 250)));
     interfaceItems.push(new interface(500, 610, 100, 25, color(230, 230, 250)));
- 
+
     currentBgImage = bgImage2;
 
     noStroke();
@@ -221,7 +221,7 @@ function draw() {
         interfaceItems[i].display();
 
     }
-   
+
 
     fill(0);
     text("Find your food", 310, 625);

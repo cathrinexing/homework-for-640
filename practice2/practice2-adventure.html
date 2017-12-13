@@ -6,6 +6,7 @@
 
     <style>
         /* Enter CSS below */
+
     </style>
 
 </head>
@@ -23,20 +24,20 @@
         <input type="radio" name="dir" value="left" id="left">
         <label for="left">Left</label>
         <br>
-        
+
         <input type="radio" name="dir" value="straight" id="straight">
         <label for="straight">straight</label>
-        
+
         <br>
         <input type="radio" name="dir" value="right" id="right">
         <label for="right">right</label>
         <br>
-        
-         <input type="radio" name="dir" value="northwest" id="northwest">
+
+        <input type="radio" name="dir" value="northwest" id="northwest">
         <label for="northwest">northwest</label>
         <br>
-        
-          <input type="radio" name="dir" value="southeast" id="southeast">
+
+        <input type="radio" name="dir" value="southeast" id="southeast">
         <label for="southeast">southeast</label>
         <br><br>
         <button type="button" id="direction">Where to go</button>
@@ -61,18 +62,18 @@
             } else if (radios[3].checked == true) {
                 console.log("northwest");
                 currentPos = radios[3].value;
-            }  else if (radios[4].checked == true) {
+            } else if (radios[4].checked == true) {
                 console.log("southeast");
                 currentPos = radios[4].value;
             }
-            
-            
-              
-            
-            
-            
-            
-            
+
+
+
+
+
+
+
+
             var chooseConsequence = Math.floor(Math.random() * consequence.length);
             var chooseLocation = Math.floor(Math.random() * loc.length);
             if (consequence[chooseConsequence] == "dead") {
@@ -80,23 +81,24 @@
                 getForm.style.display = "none";
             } else if (consequence[chooseConsequence] == "survived") {
                 getMessage.innerHTML = "You " + consequence[chooseConsequence] + ". You are in a " + loc[chooseLocation];
-            }  else if (consequence[chooseConsequence] == "dying") {
+            } else if (consequence[chooseConsequence] == "dying") {
                 getMessage.innerHTML = "You are " + consequence[chooseConsequence] + ". You are in a " + loc[chooseLocation];
-               } else if (consequence[chooseConsequence] == "got lost") {
+            } else if (consequence[chooseConsequence] == "got lost") {
                 getMessage.innerHTML = "You " + consequence[chooseConsequence] + ". You are in a " + loc[chooseLocation];
-               }
-        
-          }
-        
-        
-        
-        
+            }
+
+        }
+
+
+
+
         var consequence = ["dead", "survived", "dying", "got lost"];
-        var loc = ["forest", "desert", "beach","castle","sea"];
+        var loc = ["forest", "desert", "beach", "castle", "sea"];
         var getDir = document.getElementById("direction");
         getDir.addEventListener("click", move);
         var getMessage = document.getElementById("message");
-        var getForm =document.getElementById("directionForm");
+        var getForm = document.getElementById("directionForm");
+
     </script>
 
 </body>
