@@ -16,27 +16,32 @@
 #### the hero fish is moving with the mouse,also the eyes of my hero have mapping movement. when you open the site, you cannot find anything, but the background music and animation start .
 ## There are 2 interface buttons below the background:"find your food" and "find your mate".
 ### 一.find your food
-#### After clicking "find your food"button, the text"on your way to find your food" would appear. If you find your food (watermelon/banana),
+#### After clicking "find your food"button, the text"on your way to find your food" would appear.
+#### If you find your food (watermelon/banana),
 1. a cheering sound plays;
 2. the bubbles move faster;
 3. animation frame becomes fast;
-4. the text"you find your food!!" would appear on the top.
-#### Also, the position of these food is random.
+4. the text"you find your food!!" would appear on the top;
+5. the color of the hero fish turns to be orange.
+#### Also, the position of these food is random. There are 2 food and 1 non-food products.
 
 #### if you find a non-food product that cannot be eat(shoes),
 1. a slam sound plays;
 2. the bubbles move more slowly;
 3. animation frame becomes slower;
-4. the text"Sorry, you are wrong!" would appear on the top.
+4. the text"Sorry, you are wrong!" would appear on the top;
+5. the color of the hero fish turns to be grey.
 #### Also, the position of non-food product is random.
 
 ###  二.find your mate
-#### After clicking "find your mate"button,if you find your mate,
+#### After clicking "find your mate"button.
+#### if you find your mate,
 1. a very brisk song will play; 
 2. the environment will change;
 3. display a peachheart;
 4. animation become faster;
-5.  the text" you find your mate!!!" would appear on the top.
-#### Also, the target fish is random.
+5. the text" you find your mate!!!" would appear on the top;
+6. the color of the hero fish turns to be pink.
+#### Also, the target fish is random.There are 4 random fishes.
 
 
