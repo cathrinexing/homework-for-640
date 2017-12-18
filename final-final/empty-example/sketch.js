@@ -32,6 +32,8 @@ function preload() {
     bgImage2 = loadImage("assets/seaw.jpg");
     fishImage0 = loadImage("assets/fish.png");
     fishImage1 = loadImage("assets/f1.png");
+    fishImage2 = loadImage("assets/f2.png");
+    fishImage3 = loadImage("assets/f3.png");
     peach = loadImage("assets/peach.png");
     shoes = loadImage("assets/shoes.png");
     banana = loadImage("assets/banana.png");
@@ -150,7 +152,7 @@ function draw() {
         var hitZoneDist2 = dist(hitZoneX2, hitZoneY2, mouseX, mouseY);
         if (hitZoneDist2 <= 30) {
             image(watermelon, hitZoneX2, hitZoneY2, 100, 100);
-            currentfishImage = fishImage1;
+            currentfishImage = fishImage2;
             setRate = 60;
             text("You find your food!!", 320, 100);
             soundFile4.rate(3);
@@ -168,7 +170,7 @@ function draw() {
         var hitZoneDist3 = dist(hitZoneX3, hitZoneY3, mouseX, mouseY);
         if (hitZoneDist3 <= 30) {
             image(banana, hitZoneX3, hitZoneY3, 100, 100);
-            currentfishImage = fishImage1;
+            currentfishImage = fishImage2;
             text("You find your food!!", 320, 100);
             setRate = 60;;
             soundFile4.rate(3);
@@ -205,7 +207,7 @@ function draw() {
         if (hitZoneDist0 <= 30) {
             imageMode(CENTER);
             currentBgImage = bgImage0;
-            currentfishImage = fishImage1;
+            currentfishImage = fishImage3;
             image(peach, posX + 120, posY - 70, 200, 200);
             setRate = 60;
             text("You find your mate!!!", 320, 120);
