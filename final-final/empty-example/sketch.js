@@ -3,12 +3,12 @@ var posY = 0;
 var p = [];
 var b = [];
 var interfaceItems = [];
-var positionArray = [[100, 300], [300, 200], [500, 250],[600, 350]];
+var positionArray = [[100, 300], [300, 200], [500, 250], [600, 350]];
 var numberBubbles = 50;
 var bgImage0, bgImage1, bgImage2;
 var currentBgImage;
-//var currentfishImage;
-var fishImage0,fishImage1,fishImage2,fishImage3;
+var currentfishImage;
+var fishImage0, fishImage1, fishImage2, fishImage3;
 var peach;
 var watermelon, shoes, banana;
 var hitZoneX1 = 600;
@@ -31,7 +31,7 @@ function preload() {
     bgImage1 = loadImage("assets/food.jpg")
     bgImage2 = loadImage("assets/seaw.jpg");
     fishImage0 = loadImage("assets/fish.png");
-    fishImage1  = loadImage("assets/f1.png");
+    fishImage1 = loadImage("assets/f1.png");
     peach = loadImage("assets/peach.png");
     shoes = loadImage("assets/shoes.png");
     banana = loadImage("assets/banana.png");
@@ -54,6 +54,9 @@ function setup() {
     interfaceItems.push(new interface(500, 610, 100, 25, color(230, 230, 250)));
 
     currentBgImage = bgImage2;
+    currentfishImage = fishImage0;
+    //   image(fishImage0, posX, posY, 140, 80)
+
     soundFile1.play();
     soundFile1.setVolume(0.5)
 
@@ -108,7 +111,7 @@ function draw() {
     posX = mouseX;
     posY = mouseY;
     noStroke();
-    image(fishImage0, posX, posY, 140, 80)
+    image(currentfishImage, posX, posY, 140, 80)
     //eyes
     var wiggleX = map(mouseX, 0, width, -10, 10);
     fill(0);
@@ -126,23 +129,28 @@ function draw() {
         var hitZoneDist1 = dist(hitZoneX1, hitZoneY1, mouseX, mouseY);
 
         if (hitZoneDist1 <= 30) {
-            //image(fishImage1, posX, posY, 140, 80);
             image(shoes, hitZoneX1, hitZoneY1, 100, 100);
+            currentfishImage = fishImage1;
             setRate = 2;
             text("Sorry, you are wrong!", 320, 100);
-          
+
             soundFile2.rate(1);
             if (!soundFile2.isPlaying()) {
                 soundFile2.setVolume(0.5);
                 soundFile2.play();
             }
 
+        } else {
+
+            currentfishImage = fishImage0;
         }
+
 
 
         var hitZoneDist2 = dist(hitZoneX2, hitZoneY2, mouseX, mouseY);
         if (hitZoneDist2 <= 30) {
             image(watermelon, hitZoneX2, hitZoneY2, 100, 100);
+            currentfishImage = fishImage1;
             setRate = 60;
             text("You find your food!!", 320, 100);
             soundFile4.rate(3);
@@ -151,10 +159,16 @@ function draw() {
                 soundFile4.play();
             }
 
+        } else {
+
+            currentfishImage = fishImage0;
         }
+
+
         var hitZoneDist3 = dist(hitZoneX3, hitZoneY3, mouseX, mouseY);
         if (hitZoneDist3 <= 30) {
             image(banana, hitZoneX3, hitZoneY3, 100, 100);
+            currentfishImage = fishImage1;
             text("You find your food!!", 320, 100);
             setRate = 60;;
             soundFile4.rate(3);
@@ -164,15 +178,19 @@ function draw() {
             }
 
 
+        } else {
+
+            currentfishImage = fishImage0;
         }
+
     }
 
 
-//    strokeWeight(5);
-//    ellipse(hitZoneX1, hitZoneY1, 10, 10);
-//    ellipse(hitZoneX2, hitZoneY2, 10, 10);
-//    ellipse(hitZoneX3, hitZoneY3, 10, 10);
-//  
+    strokeWeight(5);
+    ellipse(hitZoneX1, hitZoneY1, 10, 10);
+    ellipse(hitZoneX2, hitZoneY2, 10, 10);
+    ellipse(hitZoneX3, hitZoneY3, 10, 10);
+
 
     //hitzones(target fish)
 
@@ -187,7 +205,8 @@ function draw() {
         if (hitZoneDist0 <= 30) {
             imageMode(CENTER);
             currentBgImage = bgImage0;
-            image(peach, posX+120, posY-70, 200, 200);
+            currentfishImage = fishImage1;
+            image(peach, posX + 120, posY - 70, 200, 200);
             setRate = 60;
             text("You find your mate!!!", 320, 120);
             soundFile1.stop();
@@ -201,13 +220,14 @@ function draw() {
 
         } else {
             fishDisappear = false;
+            currentfishImage = fishImage0;
             currentBgImage = bgImage2;
             soundFile3.stop();
 
         }
 
     }
-    
+
 
     //bubles show
     for (var g = 0; g < b.length; g++) {
@@ -215,8 +235,8 @@ function draw() {
         b[g].draw();
 
     }
-    
-    
+
+
     //fish show
     //    imageMode(CORNER);
     if (fishDisappear == false) {
