@@ -3,11 +3,12 @@ var posY = 0;
 var p = [];
 var b = [];
 var interfaceItems = [];
-var positionArray = [[100, 300], [300, 200], [500, 250]];
+var positionArray = [[100, 300], [300, 200], [500, 250],[600, 350]];
 var numberBubbles = 50;
 var bgImage0, bgImage1, bgImage2;
 var currentBgImage;
-var fishImage;
+//var currentfishImage;
+var fishImage0,fishImage1,fishImage2,fishImage3;
 var peach;
 var watermelon, shoes, banana;
 var hitZoneX1 = 600;
@@ -29,7 +30,8 @@ function preload() {
     bgImage0 = loadImage("assets/b2.jpg");
     bgImage1 = loadImage("assets/food.jpg")
     bgImage2 = loadImage("assets/seaw.jpg");
-    fishImage = loadImage("assets/fish.png");
+    fishImage0 = loadImage("assets/fish.png");
+    fishImage1  = loadImage("assets/f1.png");
     peach = loadImage("assets/peach.png");
     shoes = loadImage("assets/shoes.png");
     banana = loadImage("assets/banana.png");
@@ -62,8 +64,8 @@ function setup() {
         b.push(new Bubble());
 
     }
-    //adds  3 random fish to the array
-    for (var i = 0; i < 3; i++) {
+    //adds  4 random fish to the array
+    for (var i = 0; i < 4; i++) {
         var pString = "assets/fishp" + i + ".png";
         var curFish = [];
 
@@ -98,22 +100,20 @@ function draw() {
     image(currentBgImage, 450, 300, 900, 600);
 
 
-
+    //animantion
+    animation(jelly, 400, 350);
+    animation(waterp, 200, 490);
+    animation(waterp1, 550, 490);
     //hero fish
     posX = mouseX;
     posY = mouseY;
-    image(fishImage, posX, posY, 140, 80)
     noStroke();
-
+    image(fishImage0, posX, posY, 140, 80)
     //eyes
     var wiggleX = map(mouseX, 0, width, -10, 10);
     fill(0);
     ellipse(posX + 50 + wiggleX, posY - 20, 10, 10);
 
-    //animantion
-    animation(jelly, 400, 350);
-    animation(waterp, 200, 490);
-    animation(waterp1, 550, 490);
 
 
     //hitzones(food)
@@ -122,12 +122,15 @@ function draw() {
         textSize(20);
         text("On your way to find your food", 320, 80);
 
+
         var hitZoneDist1 = dist(hitZoneX1, hitZoneY1, mouseX, mouseY);
 
         if (hitZoneDist1 <= 30) {
+            //image(fishImage1, posX, posY, 140, 80);
             image(shoes, hitZoneX1, hitZoneY1, 100, 100);
             setRate = 2;
             text("Sorry, you are wrong!", 320, 100);
+          
             soundFile2.rate(1);
             if (!soundFile2.isPlaying()) {
                 soundFile2.setVolume(0.5);
@@ -169,6 +172,7 @@ function draw() {
 //    ellipse(hitZoneX1, hitZoneY1, 10, 10);
 //    ellipse(hitZoneX2, hitZoneY2, 10, 10);
 //    ellipse(hitZoneX3, hitZoneY3, 10, 10);
+//  
 
     //hitzones(target fish)
 
@@ -183,7 +187,7 @@ function draw() {
         if (hitZoneDist0 <= 30) {
             imageMode(CENTER);
             currentBgImage = bgImage0;
-            image(peach, 600, 350, 200, 200);
+            image(peach, posX+120, posY-70, 200, 200);
             setRate = 60;
             text("You find your mate!!!", 320, 120);
             soundFile1.stop();
@@ -203,7 +207,7 @@ function draw() {
         }
 
     }
-    //    startMating = false;
+    
 
     //bubles show
     for (var g = 0; g < b.length; g++) {
@@ -211,11 +215,12 @@ function draw() {
         b[g].draw();
 
     }
-
+    
+    
     //fish show
     //    imageMode(CORNER);
     if (fishDisappear == false) {
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < 4; i++) {
 
             image(p[i][2], p[i][0], p[i][1], p[i][2].width / 3, p[i][2].height / 3);
         }
@@ -224,6 +229,7 @@ function draw() {
     if (fishDisappear == true) {
         image(p[randomFish][2], p[randomFish][0], p[randomFish][1], p[randomFish][2].width / 3, p[randomFish][2].height / 3);
     }
+
 
 
     //interface button 
@@ -291,7 +297,7 @@ function mousePressed() {
 
     }
 
-  
+
 }
 
 function interface(tempX, tempY, tempBoxSizeX, tempBoxSizeY, tempColor) {
