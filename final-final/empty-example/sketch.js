@@ -152,7 +152,7 @@ function draw() {
         var hitZoneDist2 = dist(hitZoneX2, hitZoneY2, mouseX, mouseY);
         if (hitZoneDist2 <= 30) {
             image(watermelon, hitZoneX2, hitZoneY2, 100, 100);
-            currentfishImage = fishImage2;
+
             setRate = 60;
             text("You find your food!!", 320, 100);
             soundFile4.rate(3);
