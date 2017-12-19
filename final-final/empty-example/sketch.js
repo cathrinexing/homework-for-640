@@ -142,13 +142,13 @@ function draw() {
                 soundFile2.play();
             }
 
-        } 
+        }
 
 
         var hitZoneDist2 = dist(hitZoneX2, hitZoneY2, mouseX, mouseY);
         if (hitZoneDist2 <= 30) {
             image(watermelon, hitZoneX2, hitZoneY2, 100, 100);
- currentfishImage = fishImage2;
+            currentfishImage = fishImage2;
             setRate = 60;
             text("You find your food!!", 320, 100);
             soundFile4.rate(3);
@@ -157,7 +157,7 @@ function draw() {
                 soundFile4.play();
             }
 
-        } 
+        }
 
 
         var hitZoneDist3 = dist(hitZoneX3, hitZoneY3, mouseX, mouseY);
@@ -173,14 +173,14 @@ function draw() {
             }
 
 
-        } 
+        }
     }
 
 
-//    strokeWeight(5);
-//    ellipse(hitZoneX1, hitZoneY1, 10, 10);
-//    ellipse(hitZoneX2, hitZoneY2, 10, 10);
-//    ellipse(hitZoneX3, hitZoneY3, 10, 10);
+    //    strokeWeight(5);
+    //    ellipse(hitZoneX1, hitZoneY1, 10, 10);
+    //    ellipse(hitZoneX2, hitZoneY2, 10, 10);
+    //    ellipse(hitZoneX3, hitZoneY3, 10, 10);
 
 
     //hitzones(target fish)
@@ -214,7 +214,7 @@ function draw() {
             currentfishImage = fishImage0;
             currentBgImage = bgImage2;
             soundFile3.stop();
-
+            soundFile1.play();
         }
 
     }
