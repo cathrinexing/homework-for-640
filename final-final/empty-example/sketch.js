@@ -204,6 +204,7 @@ function draw() {
             if (!soundFile3.isPlaying()) {
                 soundFile3.setVolume(1);
                 soundFile3.play();
+
             }
 
             fishDisappear = true;
@@ -214,7 +215,10 @@ function draw() {
             currentfishImage = fishImage0;
             currentBgImage = bgImage2;
             soundFile3.stop();
-            soundFile1.play();
+            if (!soundFile1.isPlaying()) {
+                soundFile1.setVolume(1);
+                soundFile1.play();
+            }
         }
 
     }
